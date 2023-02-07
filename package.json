@@ -1,0 +1,60 @@
+{
+  "name": "uniapp-vue3-starter",
+  "version": "0.0.0",
+  "description": "uniapp vue starter",
+  "scripts": {
+    "dev:app": "uni -p app",
+    "dev:app-android": "uni -p app-android",
+    "dev:app-ios": "uni -p app-ios",
+    "dev:custom": "uni -p",
+    "dev:h5": "uni",
+    "dev:h5:ssr": "uni --ssr",
+    "dev:mp-weixin": "uni -p mp-weixin",
+    "build:app": "uni build -p app",
+    "build:app-android": "uni build -p app-android",
+    "build:app-ios": "uni build -p app-ios",
+    "build:custom": "uni build -p",
+    "build:h5": "uni build",
+    "build:h5:ssr": "uni build --ssr",
+    "build:mp-weixin": "uni build -p mp-weixin",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint ./src"
+  },
+  "keywords": [
+    "uniapp",
+    "vue3",
+    "starter"
+  ],
+  "author": "shy1118",
+  "license": "MIT",
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-app-plus": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-components": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-h5": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3061620221230002",
+    "pinia": "^2.0.30",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.2.11",
+    "@dcloudio/uni-automator": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-stacktracey": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3061620221230002",
+    "@shy1118/eslint-config": "^1.0.5",
+    "@types/node": "^18.13.0",
+    "eslint": "^8.33.0",
+    "sass": "^1.58.0",
+    "typescript": "^4.9.5",
+    "unocss": "^0.49.4",
+    "unocss-preset-weapp": "^0.3.0",
+    "unplugin-auto-import": "^0.12.2",
+    "vite": "4.0.4",
+    "vue-tsc": "^1.0.24"
+  },
+  "eslintConfig": {
+    "extends": "@shy1118"
+  }
+}

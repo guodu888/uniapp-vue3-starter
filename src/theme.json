@@ -1,0 +1,14 @@
+{
+	"light": {
+		"tabbarBorderStyle": "white",
+		"backgroundColor": "#F8F8F8",
+		"navBgColor": "#ffffff",
+		"navTxtStyle": "black"
+	},
+	"dark": {
+		"tabbarBorderStyle": "black",
+		"backgroundColor": "#222222",
+		"navBgColor": "#292929",
+		"navTxtStyle": "white"
+	}
+}
