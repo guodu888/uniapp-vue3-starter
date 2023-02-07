@@ -1,7 +1,19 @@
 <script setup lang="ts">
+const userStore = useUserStore()
 const account = ref('')
 const pwd = ref('')
-function handleLogin() { }
+function handleLogin() {
+  // 验证参数
+  if (account.value.trim() === '') {
+    uni.showToast({ icon: 'none', title: '请输入账号' })
+    return
+  }
+  if (pwd.value.trim() === '') {
+    uni.showToast({ icon: 'none', title: '请输入密码' })
+    return
+  }
+  userStore.login(account.value.trim(), pwd.value.trim())
+}
 function handleLoginByCode() { }
 </script>
 
