@@ -1,6 +1,6 @@
 import { api } from '~/config/api'
 import type { RoleItem, UserInfo } from '~/types/user'
-import { Fetch } from '~/utils'
+import { Fetch } from '~/utils/fetch'
 import { getToken, getUserRoleId, removeToken, removeUserRoleId, setToken, setUserRoleId } from '~/utils/auth'
 
 export const useUserStore = defineStore('user', () => {
