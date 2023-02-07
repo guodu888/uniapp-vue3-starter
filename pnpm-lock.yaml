@@ -20,6 +20,7 @@ specifiers:
   '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3070020230117001
   '@shy1118/eslint-config': ^1.0.5
   '@types/node': ^18.13.0
+  body-parser: ^1.20.1
   eslint: ^8.33.0
   esno: ^0.16.3
   express: ^4.18.2
@@ -59,6 +60,7 @@ devDependencies:
   '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3070020230117001_snwypj6lv3myyn26fkc3kmxsyq
   '@shy1118/eslint-config': 1.0.5_4vsywjlpuriuw3tl5oq6zy5a64
   '@types/node': 18.13.0
+  body-parser: 1.20.1
   eslint: 8.33.0
   esno: 0.16.3
   express: 4.18.2

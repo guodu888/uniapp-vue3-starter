@@ -5,15 +5,15 @@ const FETCH_DEFAULT_TIMEOUT = 5000
 export function Fetch<T = any>(url: string, options: Partial<FetchOptions>): Promise<T> {
   const requestOptions: FetchOptions = {
     method: options.method || 'GET',
-    headers: options.headers || {},
+    header: options.header || {},
     data: options.data || {},
     timeout: options.timeout || FETCH_DEFAULT_TIMEOUT,
   }
   const userStore = useUserStore()
   if (userStore.token)
-    requestOptions.headers.Token = userStore.token
+    requestOptions.header.Token = userStore.token
   if (userStore.currentRole)
-    requestOptions.headers['Role-ID'] = `${userStore.currentRole.id}`
+    requestOptions.header['Role-ID'] = `${userStore.currentRole.id}`
 
   return new Promise((resolve, reject) => {
     uni.request({

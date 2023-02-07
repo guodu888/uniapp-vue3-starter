@@ -1,7 +1,7 @@
 export type FetchMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
 export interface FetchOptions {
   method: FetchMethod
-  headers: Record<string, string>
+  header: Record<string, string>
   data: Record<string, string | number>
   timeout: number
 }
