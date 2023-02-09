@@ -84,6 +84,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useFetchPage: typeof import('./src/composables/useFetchPage')['useFetchPage']
   const useSlots: typeof import('vue')['useSlots']
   const useUserStore: typeof import('./src/store/user')['useUserStore']
   const watch: typeof import('vue')['watch']
@@ -178,6 +179,7 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useFetchPage: UnwrapRef<typeof import('./src/composables/useFetchPage')['useFetchPage']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useUserStore: UnwrapRef<typeof import('./src/store/user')['useUserStore']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

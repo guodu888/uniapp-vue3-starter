@@ -4,6 +4,11 @@ function handleToLogin() {
     url: '/pages/login/index',
   })
 }
+function handleToFetchPage() {
+  uni.navigateTo({
+    url: '/pages/fetchPage/index',
+  })
+}
 </script>
 
 <template>
@@ -11,6 +16,9 @@ function handleToLogin() {
     Index
     <button plain @tap="handleToLogin">
       To Login
+    </button>
+    <button plain @tap="handleToFetchPage">
+      To FetchPage
     </button>
   </view>
 </template>
