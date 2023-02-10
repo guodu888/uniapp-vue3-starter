@@ -2,7 +2,7 @@
  * @Author: Arthur_Zhang
  * @Date: 2023-02-10 15:01:13
  * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-10 18:39:40
+ * @LastEditTime: 2023-02-10 18:57:15
  * @Description:
 -->
 <script setup lang="ts">
@@ -84,6 +84,7 @@ function navigateTo() {}
         <slot name="footer" />
       </block>
     </view>
+    <view class="line" />
   </view>
 </template>
 
@@ -97,7 +98,18 @@ function navigateTo() {}
   font-size: 34rpx;
   color: var(--weui-FG-0);
   background-color: var(--bg-color);
+  position: relative;
 
+}
+.line {
+  height: 1px;
+  background-color: #E5E5E5;
+  width: 80%;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  z-index: 99;
 }
 .weui-cell_access {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
