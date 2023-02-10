@@ -76,6 +76,7 @@ declare global {
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
   const storeToRefs: typeof import('pinia')['storeToRefs']
+  const theme: typeof import('./src/composables/useTheme')['theme']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
@@ -86,6 +87,7 @@ declare global {
   const useCssVars: typeof import('vue')['useCssVars']
   const useFetchPage: typeof import('./src/composables/useFetchPage')['useFetchPage']
   const useSlots: typeof import('vue')['useSlots']
+  const useTheme: typeof import('./src/composables/useTheme')['useTheme']
   const useUserStore: typeof import('./src/store/user')['useUserStore']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -171,6 +173,7 @@ declare module 'vue' {
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
     readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
+    readonly theme: UnwrapRef<typeof import('./src/composables/useTheme')['theme']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
@@ -181,6 +184,7 @@ declare module 'vue' {
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useFetchPage: UnwrapRef<typeof import('./src/composables/useFetchPage')['useFetchPage']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useTheme: UnwrapRef<typeof import('./src/composables/useTheme')['useTheme']>
     readonly useUserStore: UnwrapRef<typeof import('./src/store/user')['useUserStore']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
