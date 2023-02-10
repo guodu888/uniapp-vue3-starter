@@ -2,11 +2,11 @@
  * @Author: Arthur_Zhang
  * @Date: 2023-02-10 09:36:24
  * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-10 09:36:42
+ * @LastEditTime: 2023-02-10 14:35:29
  * @Description:
 -->
 <script setup lang='ts'>
-const showStudentBottomPop = ref(true)
+const showStudentBottomPop = ref(false)
 function handleShowBottomPop() {
   showStudentBottomPop.value = !showStudentBottomPop.value
 }
@@ -47,5 +47,7 @@ function handleCloseLeftPop() {
     >
       bottom left
     </guodu-drawer>
+    <guodu-seletor icon="" />
+    <guodu-seletor max-width="400rpx" text="wo我是" />
   </div>
 </template>
