@@ -2,44 +2,36 @@
  * @Author: Arthur_Zhang
  * @Date: 2023-02-10 15:01:13
  * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-10 18:24:07
+ * @LastEditTime: 2023-02-10 18:39:40
  * @Description:
 -->
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    hover?: boolean
     link?: boolean
     extClass?: string
     iconClass?: string
     icon?: string
     title?: string // 和icon二选一，都是放在cell_hd里面
     value?: string
-    url?: string
     footerClass?: string
     footer?: string
     hasHeader?: boolean
     hasFooter?: boolean
     hasBody?: boolean
-    extHoverClass?: string // 提供给需要定制 hover-class 的场景，要求 hover 为 false
-    ariaRole?: string
   }>(),
   {
-    hover: false,
     link: false,
     extClass: '',
     iconClass: '',
     icon: '',
     title: '',
     value: '',
-    url: '',
     footerClass: '',
     footer: '',
     hasHeader: true,
     hasFooter: true,
     hasBody: true,
-    extHoverClass: '',
-    ariaRole: '',
   },
 )
 const outerClass = ''
@@ -58,7 +50,6 @@ function navigateTo() {}
     ]"
     @tap="navigateTo"
   >
-    <!-- hover-class="{{hover ? 'weui-cell_active weui-active' : extHoverClass}}" -->
     <view v-if="hasHeader" class="weui-cell__hd" :class="[iconClass]">
       <block v-if="icon">
         <image :src="icon" class="weui-cell__icon" mode="aspectFit" />
