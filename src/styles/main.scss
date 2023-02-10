@@ -110,8 +110,8 @@ view {
     --border-color: rgba(209, 213, 219, 0.5);
     background-color: var(--page-background-color);
      // 组件颜色配置
-    --guodu-drawer-bg-color: #000000;
-    --guodu-drawer-bg-color-mask:rgba( 255, 255, 255, 0.4);//遮罩颜色
+    --guodu-drawer-bg-color: rgba(37, 37, 37, 1);
+    --guodu-drawer-bg-color-mask:rgba( 0, 0, 0, 0.6);//遮罩颜色
   }
 }
 
