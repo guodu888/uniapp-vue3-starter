@@ -25,6 +25,10 @@
 			"style": {
 				"enablePullDownRefresh": true
 			}
+		},
+		{
+			"path": "pages/echarts/index",
+			"style": {}
 		}
 	],
 	"globalStyle": {

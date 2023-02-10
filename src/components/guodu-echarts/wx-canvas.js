@@ -1,0 +1,111 @@
+export default class WxCanvas {
+  constructor(ctx, canvasId, isNew, canvasNode) {
+    this.ctx = ctx
+    this.canvasId = canvasId
+    this.chart = null
+    this.isNew = isNew
+    if (isNew)
+      this.canvasNode = canvasNode
+
+    else
+      this._initStyle(ctx)
+
+    // this._initCanvas(zrender, ctx);
+
+    this._initEvent()
+  }
+
+  // 新增空函数，修复调用 echarts.init 时报错
+  addEventListener() {}
+
+  getContext(contextType) {
+    if (contextType === '2d')
+      return this.ctx
+  }
+
+  // canvasToTempFilePath(opt) {
+  //   if (!opt.canvasId) {
+  //     opt.canvasId = this.canvasId;
+  //   }
+  //   return wx.canvasToTempFilePath(opt, this);
+  // }
+
+  setChart(chart) {
+    this.chart = chart
+  }
+
+  attachEvent() {
+    // noop
+  }
+
+  detachEvent() {
+    // noop
+  }
+
+  _initCanvas(zrender, ctx) {
+    zrender.util.getContext = function () {
+      return ctx
+    }
+
+    zrender.util.$override('measureText', (text, font) => {
+      ctx.font = font || '12px sans-serif'
+      return ctx.measureText(text)
+    })
+  }
+
+  _initStyle(ctx) {
+    ctx.createRadialGradient = () => {
+      // eslint-disable-next-line prefer-rest-params
+      return ctx.createCircularGradient(arguments)
+    }
+  }
+
+  _initEvent() {
+    this.event = {}
+    const eventNames = [{
+      wxName: 'touchStart',
+      ecName: 'mousedown',
+    }, {
+      wxName: 'touchMove',
+      ecName: 'mousemove',
+    }, {
+      wxName: 'touchEnd',
+      ecName: 'mouseup',
+    }, {
+      wxName: 'touchEnd',
+      ecName: 'click',
+    }]
+
+    eventNames.forEach((name) => {
+      this.event[name.wxName] = (e) => {
+        const touch = e.touches[0]
+        this.chart.getZr().handler.dispatch(name.ecName, {
+          zrX: name.wxName === 'tap' ? touch.clientX : touch.x,
+          zrY: name.wxName === 'tap' ? touch.clientY : touch.y,
+        })
+      }
+    })
+  }
+
+  set width(w) {
+    if (this.canvasNode)
+      this.canvasNode.width = w
+  }
+
+  get width() {
+    if (this.canvasNode)
+      return this.canvasNode.width
+    return 0
+  }
+
+  set height(h) {
+    if (this.canvasNode)
+      this.canvasNode.height = h
+  }
+
+  get height() {
+    if (this.canvasNode)
+      return this.canvasNode.height
+    return 0
+  }
+}

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const t = useTheme()
 onLaunch(() => {
   // eslint-disable-next-line no-console
   console.log('App Launch')
@@ -12,6 +13,14 @@ onShow(() => {
 onHide(() => {
   // eslint-disable-next-line no-console
   console.log('App Hide')
+})
+uni.getSystemInfo({
+  success(info) {
+    t.setTheme(info.theme as 'light' | 'dark')
+  },
+})
+onThemeChange(({ theme }) => {
+  t.setTheme(theme)
 })
 </script>
 
