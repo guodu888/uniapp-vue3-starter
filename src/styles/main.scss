@@ -64,7 +64,8 @@ page {
   --guodu-drawer-bg-color-mask:rgba(0, 0, 0, 0.4);// 遮罩颜色
   --guodu-seletor-color: #4098fc;
   --guodu-seletor-bg-color: #EBF5FF;
-
+  --weui-FG-1: rgba(0, 0, 0, 0.6);
+  --weui-FG-2: rgba(0, 0, 0, 0.3);
 
 }
 
@@ -117,6 +118,8 @@ view {
     --guodu-drawer-bg-color-mask:rgba( 255, 255, 255, 0.4);// 遮罩颜色
     --guodu-seletor-color: #70c0e8;
     --guodu-seletor-bg-color: #EBF5FF;
+    --weui-FG-1:hsla(0,0%,100%,.5)
+    --weui-FG-2:hsla(0,0%,100%,.3);
   }
 }
 
