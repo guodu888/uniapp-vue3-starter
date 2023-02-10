@@ -19,6 +19,12 @@
 			"style": {
 				"navigationBarTitleText": "test"
 			}
+		},
+		{
+			"path": "pages/fetchPage/index",
+			"style": {
+				"enablePullDownRefresh": true
+			}
 		}
 	],
 	"globalStyle": {

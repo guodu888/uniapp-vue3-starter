@@ -3,6 +3,7 @@ const BASE_URL = 'http://127.0.0.1:8081/api'
 const path = {
   login: '/login',
   getUserInfo: '/user/info',
+  getUserList: '/user/list',
 } as const
 
 type ApiKeys = keyof typeof path

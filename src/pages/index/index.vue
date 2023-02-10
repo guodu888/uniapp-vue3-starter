@@ -2,7 +2,7 @@
  * @Author: Arthur_Zhang
  * @Date: 2023-02-09 14:51:27
  * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-10 09:38:39
+ * @LastEditTime: 2023-02-10 09:41:31
  * @Description:
 -->
 <script setup lang="ts">
@@ -18,6 +18,11 @@ function handleToTest() {
     url: '/pages/test/index',
   })
 }
+function handleToFetchPage() {
+  uni.navigateTo({
+    url: '/pages/fetchPage/index',
+  })
+}
 </script>
 
 <template>
@@ -27,8 +32,13 @@ function handleToTest() {
     <button plain @tap="handleToLogin">
       To Login
     </button>
-    <button class="mt-20rpx" plain @tap="handleToTest">
+
+    <button plain @tap="handleToTest">
       To test
+    </button>
+
+    <button plain @tap="handleToFetchPage">
+      To FetchPage
     </button>
   </view>
 </template>
