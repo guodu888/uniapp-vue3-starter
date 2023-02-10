@@ -2,7 +2,7 @@
  * @Author: Arthur_Zhang
  * @Date: 2023-02-09 17:39:35
  * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-10 09:34:15
+ * @LastEditTime: 2023-02-10 10:56:05
  * @Description:
 -->
 <script setup lang="ts">
@@ -95,8 +95,8 @@ const size = computed(() => props.size)
 <style lang="scss" scoped>
 // 抽屉宽度
 $drawer-size: v-bind(size);
-$bg-color: #ffffff;
-$bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+// var(--guodu-drawer-bg-color): #ffffff;
+// var(--guodu-drawer-bg-color)-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
 .guodu-drawer {
   /* #ifndef APP-NVUE */
   display: block;
@@ -116,7 +116,7 @@ $bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
   /* #endif */
   position: absolute;
 
-  background-color: $bg-color;
+  background-color: var(--guodu-drawer-bg-color);
   transition: transform 0.3s ease;
 }
 
@@ -185,7 +185,7 @@ $bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: $bg-color-mask;
+  background-color: var(--guodu-drawer-bg-color-mask);
   transition: opacity 0.3s;
 }
 
