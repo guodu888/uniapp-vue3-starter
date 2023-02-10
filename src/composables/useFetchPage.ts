@@ -18,11 +18,16 @@ export function useFetchPage<T = any>(url: string, options: Partial<Omit<FetchOp
   const pageSize = ref(options2?.pageSize ?? 10)
   const isLoadAll = ref(false)
   const isLoading = ref(true)
+  let lastData: Record<string, string | number> | undefined
 
   function load(data?: Record<string, string | number>) {
+    if (data)
+      lastData = data
     if (isLoadAll.value)
       return
     isLoading.value = true
+    if (!data)
+      data = lastData
     return Fetch(url, { ...options, data: { ...data, [CONFIG.pageNo]: pageNo.value, [CONFIG.pageSize]: pageSize.value } }).then((resData) => {
       isLoading.value = false
       list.value.push(...resData[CONFIG.list])
