@@ -9,48 +9,44 @@
 const props = withDefaults(
   defineProps<{
     visible: boolean // 是否显示
-    mode: 'left' | 'right' | 'top' | 'bottom' | ''
+    mode: 'left' | 'right' | 'top' | 'bottom'
     mask?: boolean // 蒙层显示状态
     size?: string // 抽屉宽度|高度
-    maskClick: boolean // 点击遮罩是否可以关闭
+    maskClick?: boolean // 点击遮罩是否可以关闭
   }>(),
   {
     visible: false,
     mode: 'bottom',
     mask: true,
-    size: '220',
+    size: '220px',
     maskClick: true,
   },
 )
 const emits = defineEmits(['close', 'open'])
 const visibleSync = ref(false)
 const showDrawer = ref(false)
-const watchTimer = ref<any>(null)
-// 组件初始化
-init()
-function init() {
-  visibleSync.value = props.visible
-  setTimeout(() => {
-    showDrawer.value = props.visible
-  }, 100)
-}
+let watchTimer: number | null = null
 function close() {
   showDrawer.value = false
-  if (watchTimer.value)
-    clearTimeout(watchTimer.value)
-  watchTimer.value = setTimeout(() => {
+  if (watchTimer) {
+    clearTimeout(watchTimer)
+    watchTimer = null
+  }
+  watchTimer = setTimeout(() => {
     visibleSync.value = false
     emits('close')
   }, 300)
 }
 function open() {
   visibleSync.value = true
-  if (watchTimer.value)
-    clearTimeout(watchTimer.value)
-  watchTimer.value = setTimeout(() => {
+  if (watchTimer) {
+    clearTimeout(watchTimer)
+    watchTimer = null
+  }
+  watchTimer = setTimeout(() => {
     showDrawer.value = true
     emits('open')
-  }, 50)
+  }, 0)
 }
 function handleTap() {
   if (!props.maskClick)
@@ -65,14 +61,9 @@ watch(
       open()
     else close()
   },
+  { immediate: true },
 )
-const currentStyle = computed(() => {
-  if (props.mode === 'bottom' || props.mode === 'top')
-    return { height: props.size }
-  else
-    return { width: props.size }
-},
-)
+const size = computed(() => props.size)
 </script>
 
 <template>
@@ -95,9 +86,7 @@ const currentStyle = computed(() => {
         'guodu-drawer--top': mode === 'top',
         'guodu-drawer__content--visible': showDrawer,
       }"
-      :style="currentStyle"
     >
-      {{ visibleSync }}
       <slot />
     </view>
   </view>
@@ -105,7 +94,7 @@ const currentStyle = computed(() => {
 
 <style lang="scss" scoped>
 // 抽屉宽度
-$drawer-size: 220px;
+$drawer-size: v-bind(size);
 $bg-color: #ffffff;
 $bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
 .guodu-drawer {

@@ -6,7 +6,7 @@
  * @Description:
 -->
 <script setup lang='ts'>
-const showStudentBottomPop = ref(false)
+const showStudentBottomPop = ref(true)
 function handleShowBottomPop() {
   showStudentBottomPop.value = !showStudentBottomPop.value
 }
@@ -31,6 +31,7 @@ function handleCloseLeftPop() {
       :visible="showStudentBottomPop"
       :mask-click="true"
       mode="bottom"
+      size="50vh"
       @close="handleCloseBottomPop"
     >
       bottom pop
