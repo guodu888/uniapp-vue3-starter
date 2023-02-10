@@ -13,6 +13,12 @@
 		{
 			"path": "pages/login/index",
 			"style": {}
+		},
+		{
+			"path": "pages/test/index",
+			"style": {
+				"navigationBarTitleText": "test"
+			}
 		}
 	],
 	"globalStyle": {
