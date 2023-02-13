@@ -2,7 +2,7 @@
  * @Author: Arthur_Zhang
  * @Date: 2023-02-10 09:36:24
  * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-13 11:17:16
+ * @LastEditTime: 2023-02-13 13:59:36
  * @Description:
 -->
 <script setup lang='ts'>
@@ -57,5 +57,7 @@ function handleCloseLeftPop() {
     <guodu-loading />
     <guodu-loading type="circle" />
     <guodu-loading type="circle2" />
+    <guodu-empty />
+    <guodu-empty message="message" />
   </div>
 </template>
