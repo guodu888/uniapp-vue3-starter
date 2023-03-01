@@ -1,3 +1,6 @@
+/// <reference types="@dcloudio/types" />
+/// <reference types="vite/client" />
+
 import path from 'path'
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
