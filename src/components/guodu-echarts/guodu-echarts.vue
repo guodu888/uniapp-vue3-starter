@@ -157,7 +157,7 @@ function getCanvasAttr(): Promise<{
   // eslint-disable-next-line no-unreachable
   return new Promise((resolve, _reject) => {
     ctx = uni.createCanvasContext(props.canvasId, instance)
-    const canvas = new WxCanvas(ctx, props.canvasId, false)
+    const canvas = new WxCanvas(ctx, props.canvasId, false, null)
     echarts.setPlatformAPI({
       createCanvas: () => canvas as unknown as HTMLCanvasElement,
     })
@@ -181,6 +181,11 @@ function getCanvasAttr(): Promise<{
           canvasWidth,
           canvasHeight,
           canvasDpr,
+        } as unknown as {
+          canvas: HTMLCanvasElement
+          canvasWidth: number
+          canvasHeight: number
+          canvasDpr: number
         })
       })
       .exec()
