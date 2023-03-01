@@ -87,6 +87,8 @@ function handleClickGridItem(item: any) {
   <div>
     <guodu-tabs
       v-model:value="activeTab"
+      pills
+      active-color="white"
       :scroll="false" :tabs="['试卷', '批改', '题目查看']"
     />
     <!-- <guodu-tab
@@ -117,8 +119,10 @@ function handleClickGridItem(item: any) {
     >
       bottom left
     </guodu-drawer>
-    <guodu-seletor icon="" />
-    <guodu-seletor max-width="400rpx" text="wo我是" />
+    <div style="max-width: 400rpx;">
+      <guodu-seletor icon="" />
+    </div>
+    <guodu-seletor text="年级：一年级" />
     <guodu-list title="title" footer="footer">
       <guodu-list-item
         title="titlefff"
