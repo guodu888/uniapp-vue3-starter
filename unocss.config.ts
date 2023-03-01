@@ -8,7 +8,7 @@ export default {
   ],
   shortcuts: [
     {
-      center: 'flex justify-center items-center',
+      'flex-center': 'flex justify-center items-center',
     },
   ],
 

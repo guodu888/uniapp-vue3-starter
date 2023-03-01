@@ -1,11 +1,18 @@
 <!--
- * @Author: Arthur_Zhang
- * @Date: 2023-02-13 11:30:03
- * @LastEditors: Arthur_Zhang
- * @LastEditTime: 2023-02-13 14:05:48
- * @Description:
+ * guodu-empty 空内容
+ * @description 空内容
+ * @property {string} url 图片地址
+ * @property {string} message 提示内容
+ * @property {string} width 宽度
 -->
 <script setup lang='ts'>
+/**
+ * guodu-empty 空内容
+ * @description 空内容
+ * @property {string} url 图片地址
+ * @property {string} message 提示内容
+ * @property {string} width 宽度
+ */
 withDefaults(
   defineProps<{
     url?: string
@@ -21,9 +28,9 @@ withDefaults(
 </script>
 
 <template>
-  <view class="w-full flex flex-col items-center justify-center pb-50rpx my-50rpx" :style="{ width }">
-    <image class="block w-344rpx h-244rpx" mode="aspectFit" :src="url" />
-    <text class="mt-35rpx h-24rpx color-$--text-color-3 line-24rpx text 24rpx">
+  <view class="w-full flex-col flex-center my-50rpx" :style="{ width }">
+    <image class="w-344rpx h-244rpx" mode="aspectFit" :src="url" />
+    <text class="mt-35rpx leading-24rpx color-$text-color-3 text-24rpx">
       {{ message }}
     </text>
   </view>

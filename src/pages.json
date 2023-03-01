@@ -37,6 +37,9 @@
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle"
   },
+	"easycom": {
+		"^guodu-(.*)": "@/components/guodu-$1/guodu-$1.vue"
+	},
 	"tabBar": {
 		"color": "#B0BDCD",
     "selectedColor": "#0084FF",

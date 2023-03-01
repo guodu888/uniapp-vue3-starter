@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
+import type { ECOption } from '~/components/guodu-echarts/echarts'
 
-const chartData1 = ref({
+const chartData1 = ref<ECOption>({
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -43,9 +44,11 @@ const chartData1 = ref({
   ],
 })
 setTimeout(() => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   chartData1.value.series[0].data = [51, 130, 50, 40, 60, 80, 55]
 }, 2000)
-const chartData2 = ref({
+const chartData2 = ref<ECOption>({
   color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
   tooltip: {
     trigger: 'axis',
@@ -219,7 +222,7 @@ const chartData2 = ref({
     },
   ],
 })
-const chartData3 = ref({
+const chartData3 = ref<ECOption>({
   legend: {
     show: false,
   },
@@ -246,7 +249,7 @@ const chartData3 = ref({
     },
   ],
 })
-const chartData4 = ref({
+const chartData4 = ref<ECOption>({
   radar: {
     // shape: 'circle',
     indicator: [

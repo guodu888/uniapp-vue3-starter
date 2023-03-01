@@ -76,6 +76,11 @@ const mineGridList = [
   },
 ]
 const activeTab = ref(0)
+
+function handleClickGridItem(item: any) {
+  // eslint-disable-next-line no-console
+  console.log('item', item)
+}
 </script>
 
 <template>
@@ -136,7 +141,7 @@ const activeTab = ref(0)
     <guodu-loading type="circle2" />
     <guodu-empty />
     <guodu-empty message="message" />
-    <guodu-grid :list="mineGridList" />
+    <guodu-grid :list="mineGridList" @tap-item="handleClickGridItem" />
     <guodu-grid :list="mineGridList" :column="3" />
   </div>
 </template>
