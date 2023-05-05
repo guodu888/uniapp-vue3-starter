@@ -21,8 +21,10 @@ specifiers:
   '@dcloudio/uni-quickapp-webview': 3.0.0-3071120230427001
   '@dcloudio/uni-stacktracey': 3.0.0-3071120230427001
   '@dcloudio/vite-plugin-uni': 3.0.0-3071120230427001
+  '@iconify-json/carbon': ^1.1.16
   '@shy1118/eslint-config': ^1.0.5
   '@types/node': ^18.16.3
+  '@unocss/preset-icons': ^0.51.8
   body-parser: ^1.20.2
   echarts: ^5.4.2
   eslint: ^8.39.0
@@ -68,8 +70,10 @@ devDependencies:
   '@dcloudio/uni-cli-shared': 3.0.0-3071120230427001_nc4vyhlzyq3pleku5ipbdni3ma
   '@dcloudio/uni-stacktracey': 3.0.0-3071120230427001
   '@dcloudio/vite-plugin-uni': 3.0.0-3071120230427001_gcpevrpmos3va5taetuj7wgroq
+  '@iconify-json/carbon': 1.1.16
   '@shy1118/eslint-config': 1.0.5_tbtvr3a5zwdiktqy4vlmx63mqq
   '@types/node': 18.16.3
+  '@unocss/preset-icons': 0.51.8
   body-parser: 1.20.2
   eslint: 8.39.0
   esno: 0.16.3
@@ -2378,6 +2382,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/carbon/1.1.16:
+    resolution: {integrity: sha512-AD8bcnRSGA0WfcGEass2FbA0sagrUzrpFx5WchuDy3uf7yKBWumdypdQK121DH321fQDl5+zZQ26T6gC9knwUQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types/2.0.0:
