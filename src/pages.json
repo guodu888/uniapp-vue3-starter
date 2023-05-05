@@ -31,6 +31,25 @@
 		{
 			"path": "pages/echarts/index",
 			"style": {}
+		},
+		{
+			"path": "pages/components/index",
+			"style": {
+				"navigationBarTitleText": "组件"
+			}
+		},
+		{
+			"path": "pages/components/pages/drawer",
+			"style": {
+				"navigationBarTitleText": "抽屉/弹窗"
+			}
+		},
+		{
+			"path": "pages/components/pages/nav-bar",
+			"style": {
+				"navigationBarTitleText": "导航栏",
+				"navigationStyle": "custom"
+			}
 		}
 	],
 	"globalStyle": {

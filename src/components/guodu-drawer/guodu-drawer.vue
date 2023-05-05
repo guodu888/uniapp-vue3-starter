@@ -3,7 +3,7 @@
  * @Date: 2023-02-09 17:39:35
  * @LastEditors: Arthur_Zhang
  * @LastEditTime: 2023-02-10 10:56:05
- * @Description:
+ * @Description: drawer
 -->
 <script setup lang="ts">
 const props = withDefaults(
@@ -13,6 +13,7 @@ const props = withDefaults(
     mask?: boolean // 蒙层显示状态
     size?: string // 抽屉宽度|高度
     maskClick?: boolean // 点击遮罩是否可以关闭
+    radius?: boolean | number // 是否圆角
   }>(),
   {
     visible: false,
@@ -20,6 +21,7 @@ const props = withDefaults(
     mask: true,
     size: '220px',
     maskClick: true,
+    radius: false,
   },
 )
 const emits = defineEmits(['close', 'open'])
@@ -64,6 +66,13 @@ watch(
   { immediate: true },
 )
 const size = computed(() => props.size)
+const radiusSize = computed(() => {
+  if (props.radius === true)
+    return '10px'
+  if (typeof props.radius === 'number')
+    return `${props.radius}px`
+  return '0px'
+})
 </script>
 
 <template>
@@ -87,7 +96,10 @@ const size = computed(() => props.size)
         'guodu-drawer__content--visible': showDrawer,
       }"
     >
-      <slot />
+      <slot name="header" />
+      <scroll-view class="h-full" scroll-y>
+        <slot />
+      </scroll-view>
     </view>
   </view>
 </template>
@@ -95,6 +107,7 @@ const size = computed(() => props.size)
 <style lang="scss" scoped>
 // 抽屉宽度
 $drawer-size: v-bind(size);
+$drawer-radius: v-bind(radiusSize);
 // var(--guodu-drawer-bg-color): #ffffff;
 // var(--guodu-drawer-bg-color)-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
 .guodu-drawer {
@@ -131,6 +144,7 @@ $drawer-size: v-bind(size);
   /* #ifndef APP-NVUE */
   transform: translateX(-100%);
   /* #endif */
+  border-radius: 0 $drawer-radius $drawer-radius 0;
 }
 
 .guodu-drawer--right {
@@ -144,6 +158,7 @@ $drawer-size: v-bind(size);
   /* #ifndef APP-NVUE */
   transform: translateX(100%);
   /* #endif */
+  border-radius: $drawer-radius 0 0 $drawer-radius;
 }
 .guodu-drawer--bottom {
   left: 0;
@@ -156,6 +171,7 @@ $drawer-size: v-bind(size);
   /* #ifndef APP-NVUE */
   transform: translateY(100%);
   /* #endif */
+  border-radius: $drawer-radius $drawer-radius 0 0;
 }
 
 .guodu-drawer--top {
@@ -169,6 +185,7 @@ $drawer-size: v-bind(size);
   /* #ifndef APP-NVUE */
   transform: translateY(-100%);
   /* #endif */
+  border-radius: 0 0 $drawer-radius $drawer-radius;
 }
 
 .guodu-drawer__content--visible {
