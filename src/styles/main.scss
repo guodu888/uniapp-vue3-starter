@@ -144,3 +144,11 @@ view {
   background-color: var(--primary-hover-color);
   color: var(--text-color-2);
 }
+
+.top-bg {
+  background-image: url("https://guodu-homework.oss-cn-beijing.aliyuncs.com/static/student/bg-top.png");
+  background-size: 750rpx 496rpx;
+  background-repeat: no-repeat;
+  min-height: 496rpx;
+  
+}

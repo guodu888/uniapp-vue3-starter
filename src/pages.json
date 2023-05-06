@@ -9,7 +9,8 @@
 		{
 			"path": "pages/mine/index",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
 			}
 		},
 		{
@@ -35,7 +36,8 @@
 		{
 			"path": "pages/components/index",
 			"style": {
-				"navigationBarTitleText": "组件"
+				"navigationBarTitleText": "组件",
+				"navigationStyle": "custom"
 			}
 		},
 		{

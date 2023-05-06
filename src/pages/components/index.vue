@@ -14,7 +14,10 @@ function handleTo(name: string) {
 </script>
 
 <template>
-  <div>
+  <div class="p-3 top-bg">
+    <div class="mt-60rpx text-xl font-bold">
+      组件
+    </div>
     <button class="btn mt-3" @tap="handleTo('drawer')">
       弹窗/抽屉
     </button>
