@@ -2,6 +2,15 @@
 const userStore = useUserStore()
 const account = ref('')
 const pwd = ref('')
+// 判断是否有token
+if (userStore.token) {
+  // 有token 跳转到我的页面
+  // 获取userInfo
+  userStore.getUserInfo().then(() => {
+    uni.switchTab({ url: '/pages/index/index' })
+  })
+}
+
 function handleLogin() {
   // 验证参数
   if (account.value.trim() === '') {
@@ -12,7 +21,10 @@ function handleLogin() {
     uni.showToast({ icon: 'none', title: '请输入密码' })
     return
   }
-  userStore.login(account.value.trim(), pwd.value.trim())
+  userStore.login(account.value.trim(), pwd.value.trim()).then(() => {
+    // 登录成功 跳转到我的页面
+    uni.switchTab({ url: '/pages/mine/index' })
+  })
 }
 function handleLoginByCode() { }
 </script>

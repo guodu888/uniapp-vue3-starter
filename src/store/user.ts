@@ -8,11 +8,14 @@ export const useUserStore = defineStore('user', () => {
   const userInfo = ref<UserInfo | null>(null)
   const currentRole = ref<RoleItem | null>(null)
   function login(account: string, pwd: string) {
-    Fetch<{ token: string }>(api.login, { data: { account, pwd }, method: 'POST' }).then((resData) => {
-      token.value = resData.token
-      // 获取用户信息
-      setToken(resData.token)
-      getUserInfo()
+    return new Promise((resolve) => {
+      Fetch<{ token: string }>(api.login, { data: { account, pwd }, method: 'POST', showErrToast: true }).then((resData) => {
+        token.value = resData.token
+        // 获取用户信息
+        setToken(resData.token)
+        getUserInfo()
+        resolve({})
+      })
     })
   }
   function logout() {
@@ -26,11 +29,14 @@ export const useUserStore = defineStore('user', () => {
     })
   }
   function getUserInfo() {
-    Fetch<UserInfo>(api.getUserInfo, {}).then((resData) => {
-      userInfo.value = resData
-      const currentUserRoleId: number = parseInt(getUserRoleId() ?? '0')
-      const r = resData.roles.find(x => x.id === currentUserRoleId)
-      setRole(r || (resData.roles?.[0] ?? null))
+    return new Promise((resolve) => {
+      Fetch<UserInfo>(api.getUserInfo, {}).then((resData) => {
+        userInfo.value = resData
+        const currentUserRoleId: number = parseInt(getUserRoleId() ?? '0')
+        const r = resData.roles.find(x => x.id === currentUserRoleId)
+        setRole(r || (resData.roles?.[0] ?? null))
+        resolve({})
+      })
     })
   }
   function setRole(role: RoleItem | null) {

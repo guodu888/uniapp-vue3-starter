@@ -15,7 +15,6 @@ declare module '@vue/runtime-core' {
     GuoduEcharts: typeof import('./src/components/guodu-echarts/guodu-echarts.vue')['default']
     GuoduEmpty: typeof import('./src/components/guodu-empty/guodu-empty.vue')['default']
     GuoduGrid: typeof import('./src/components/guodu-grid/guodu-grid.vue')['default']
-    GuoduIcon: typeof import('./src/components/guodu-icon/guodu-icon.vue')['default']
     GuoduList: typeof import('./src/components/guodu-list/guodu-list.vue')['default']
     GuoduListItem: typeof import('./src/components/guodu-list-item/guodu-list-item.vue')['default']
     GuoduLoading: typeof import('./src/components/guodu-loading/guodu-loading.vue')['default']

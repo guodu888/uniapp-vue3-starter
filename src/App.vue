@@ -4,7 +4,15 @@ onLaunch(() => {
   // eslint-disable-next-line no-console
   console.log('App Launch')
   const userStore = useUserStore()
-  userStore.getUserInfo()
+  // 判断有没有token
+  if (!userStore.token) {
+    // 没有token 跳转到登录页面
+    uni.redirectTo({ url: '/pages/login/index' })
+  }
+  else {
+    // 有token 跳转到首页
+    uni.switchTab({ url: '/pages/index/index' })
+  }
 })
 onShow(() => {
   // eslint-disable-next-line no-console

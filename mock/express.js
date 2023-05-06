@@ -18,7 +18,7 @@ app.post('/api/login', (req, res) => {
   if (account === '123456' && pwd === '123456') {
     res.send({
       code: 0,
-      msg: '',
+      msg: 'ok',
       data: {
         token: 'Token',
       },
@@ -38,7 +38,7 @@ app.get('/api/user/info', (req, res) => {
   if (t === 'Token') {
     res.send({
       code: 0,
-      msg: '',
+      msg: 'ok',
       data: {
         nickname: '满脑的思绪',
         avatar: 'https://s2.loli.net/2023/01/30/thNH2dbqjzETlSK.jpg',
@@ -53,7 +53,11 @@ app.get('/api/user/info', (req, res) => {
     })
   }
   else {
-    res.send({})
+    res.send({
+      code: 10001,
+      msg: '请先登录',
+      data: {},
+    })
   }
 })
 

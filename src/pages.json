@@ -1,6 +1,10 @@
 {
 	"pages": [
 		{
+			"path": "pages/login/index",
+			"style": {}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "主页"
@@ -12,10 +16,6 @@
 				"navigationBarTitleText": "我的",
 				"navigationStyle": "custom"
 			}
-		},
-		{
-			"path": "pages/login/index",
-			"style": {}
 		},
 		{
 			"path": "pages/test/index",
