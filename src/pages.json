@@ -24,6 +24,12 @@
 			}
 		},
 		{
+			"path": "pages/icon/index",
+			"style": {
+				"navigationBarTitleText": "Icon"
+			}
+		},
+		{
 			"path": "pages/fetchPage/index",
 			"style": {
 				"enablePullDownRefresh": true

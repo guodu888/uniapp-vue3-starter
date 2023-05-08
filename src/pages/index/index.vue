@@ -14,6 +14,9 @@ function to(path: string) {
     <button @tap="to('/pages/test/index')">
       To test
     </button>
+    <button @tap="to('/pages/icon/index')">
+      To Icon
+    </button>
     <button @tap="to('/pages/fetchPage/index')">
       To FetchPage
     </button>

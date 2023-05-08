@@ -27,5 +27,50 @@ function handleTo(name: string) {
     <button class="btn mt-3">
       按钮
     </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
+    <button class="btn mt-3">
+      按钮
+    </button>
   </div>
 </template>

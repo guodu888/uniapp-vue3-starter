@@ -32,14 +32,14 @@ function handleClickBack() {
 
 <template>
   <div class="nav-bar nav-height w-full  flex justify-around items-center">
-    <div class="w-120 h-44px flex-left flex-left text-14px" @tap="handleClickBack">
+    <div class="w-150 h-44px flex-left flex-left text-14px" @tap="handleClickBack">
       <div v-if="props.showBack" class="w-50 h-50 i-carbon-chevron-left" />
       <slot name="icon" />
     </div>
     <div class="flex-1 text-16px font-bold truncate text-center">
       {{ title }}
     </div>
-    <div class="w-120" />
+    <div class="w-150" />
   </div>
   <!-- 放一个同样高度的div用来填充 -->
   <div class="nav-height" />

@@ -13,7 +13,7 @@ const showBack = ref(true)
 <template>
   <div class="p-3">
     <guodu-nav-bar :title="title" :show-back="showBack">
-      <template #icon>
+      <template v-if="showBack" #icon>
         返回
       </template>
     </guodu-nav-bar>
