@@ -2,6 +2,7 @@ import presetWeapp from 'unocss-preset-weapp'
 import presetIcons from '@unocss/preset-icons'
 import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
+import remToRpxPreset from './preset-rem-to-rpx'
 
 export default {
   presets: [
@@ -16,6 +17,7 @@ export default {
     }),
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
+    remToRpxPreset(),
   ],
   shortcuts: [
     {
