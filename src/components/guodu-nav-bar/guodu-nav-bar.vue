@@ -22,6 +22,10 @@ const props = withDefaults(defineProps<{
   onBack: () => true,
 })
 
+const sysInfo = uni.getSystemInfoSync()
+const menuInfo = uni.getMenuButtonBoundingClientRect()
+const h = sysInfo?.statusBarHeight ?? 0
+const navHeight = `${(menuInfo.top - h) * 2 + menuInfo.height}px`
 function handleClickBack() {
   if (!props.canBack)
     return
@@ -31,32 +35,31 @@ function handleClickBack() {
 </script>
 
 <template>
-  <div class="nav-bar nav-height w-full  flex justify-around items-center">
-    <div class="w-150 h-44px flex-left flex-left text-14px" @tap="handleClickBack">
+  <div class="nav-bar nav-height w-full flex justify-around items-center">
+    <div class="w-250 h-full flex-left flex-left text-14px" @tap="handleClickBack">
       <div v-if="props.showBack" class="w-50 h-50 i-carbon-chevron-left" />
       <slot name="icon" />
     </div>
     <div class="flex-1 text-16px font-bold truncate text-center">
       {{ title }}
     </div>
-    <div class="w-150" />
+    <div class="w-250" />
   </div>
-  <!-- 放一个同样高度的div用来填充 -->
-  <div class="nav-height" />
 </template>
 
 <style lang="scss" scoped>
+$nav-height: v-bind(navHeight);
 .nav-height {
-  height: calc(44px + env(safe-area-inset-top) + var(--status-bar-height));
-  padding: 7px 3px;
-  padding-top: calc(7px + env(safe-area-inset-top) + var(--status-bar-height));
+  box-sizing: border-box;
+  height: calc($nav-height + var(--status-bar-height));
+  line-height: $nav-height;
+  padding-top: var(--status-bar-height);
 }
 .nav-bar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: var(--window-left);
-  right: var(--window-right);
-
+  left: 0;
+  right: 0;
   z-index: 998;
   background: var(--bg-color);
   box-sizing: border-box;
