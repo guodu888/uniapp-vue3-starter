@@ -1,10 +1,19 @@
 import presetWeapp from 'unocss-preset-weapp'
 import presetIcons from '@unocss/preset-icons'
 import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 
 export default {
   presets: [
-    presetIcons(),
+    presetIcons({
+      collections: {
+        custom: FileSystemIconLoader(
+          './src/icons',
+          // 将fill属性转换为currentColor
+          svg => svg.replace(/fill="[^"]*"/g, 'fill="currentColor"'),
+        ),
+      },
+    }),
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
   ],
