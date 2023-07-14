@@ -67,7 +67,8 @@
     "navigationBarTextStyle": "@navTxtStyle"
   },
 	"easycom": {
-		"^guodu-(.*)": "@/components/guodu-$1/guodu-$1.vue"
+		"^guodu-(.*)": "@/widgets/guodu-$1/guodu-$1.vue",
+		"^shy-(.*)": "@/components/shy-$1/shy-$1.vue"
 	},
 	"tabBar": {
 		"color": "#cccccc",

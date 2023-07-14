@@ -19,6 +19,7 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      dirs: ['src/components', 'src/widgets'],
     }),
     uni(),
     Unocss(),

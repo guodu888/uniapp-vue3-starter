@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
-import type { ECOption } from '~/components/guodu-echarts/echarts'
+import type { ECOption } from '~/widgets/guodu-echarts/echarts'
 
 const chartData1 = ref<ECOption>({
   tooltip: {
