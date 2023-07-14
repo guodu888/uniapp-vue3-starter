@@ -27,11 +27,8 @@ specifiers:
   '@shy1118/eslint-config': ^1.0.5
   '@types/node': ^20.4.2
   '@unocss/preset-icons': ^0.53.5
-  body-parser: ^1.20.2
   echarts: ^5.4.2
   eslint: ^8.44.0
-  esno: ^0.17.0
-  express: ^4.18.2
   husky: ^8.0.3
   pinia: 2.0.36
   sass: ^1.63.6
@@ -78,10 +75,7 @@ devDependencies:
   '@shy1118/eslint-config': 1.0.5_iqf7tbmerllfqanu4l3d6aqdn4
   '@types/node': 20.4.2
   '@unocss/preset-icons': 0.53.5
-  body-parser: 1.20.2
   eslint: 8.44.0
-  esno: 0.17.0
-  express: 4.18.2
   husky: 8.0.3
   sass: 1.63.6
   typescript: 5.1.6
@@ -2029,27 +2023,6 @@ packages:
       - supports-color
       - ts-node
       - vue
-    dev: true
-
-  /@esbuild-kit/cjs-loader/2.4.2:
-    resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}
-    dependencies:
-      '@esbuild-kit/core-utils': 3.1.0
-      get-tsconfig: 4.6.2
-    dev: true
-
-  /@esbuild-kit/core-utils/3.1.0:
-    resolution: {integrity: sha512-Uuk8RpCg/7fdHSceR1M6XbSZFSuMrxcePFuGgyvsBn+u339dk5OeL4jv2EojwTN2st/unJGsVm4qHWjWNmJ/tw==}
-    dependencies:
-      esbuild: 0.17.19
-      source-map-support: 0.5.21
-    dev: true
-
-  /@esbuild-kit/esm-loader/2.5.5:
-    resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
-    dependencies:
-      '@esbuild-kit/core-utils': 3.1.0
-      get-tsconfig: 4.6.2
     dev: true
 
   /@esbuild/android-arm/0.17.19:
@@ -4461,26 +4434,6 @@ packages:
       - supports-color
     dev: true
 
-  /body-parser/1.20.2:
-    resolution: {integrity: sha512-ml9pReCu3M61kGlqoTm2umSXTlRTuGTx0bfYj+uIUKKYycG5NtSbeetV3faSU6R7ajOPw0g/J1PvK4qNy7s5bA==}
-    engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
-    dependencies:
-      bytes: 3.1.2
-      content-type: 1.0.5
-      debug: 2.6.9
-      depd: 2.0.0
-      destroy: 1.2.0
-      http-errors: 2.0.0
-      iconv-lite: 0.4.24
-      on-finished: 2.4.1
-      qs: 6.11.0
-      raw-body: 2.5.2
-      type-is: 1.6.18
-      unpipe: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
@@ -5651,13 +5604,6 @@ packages:
       - supports-color
     dev: true
 
-  /esno/0.17.0:
-    resolution: {integrity: sha512-w78cQGlptQfsBYfootUCitsKS+MD74uR5L6kNsvwVkJsfzEepIafbvWsx2xK4rcFP4IUftt4F6J8EhagUxX+Bg==}
-    hasBin: true
-    dependencies:
-      tsx: 3.12.7
-    dev: true
-
   /espree/9.6.0:
     resolution: {integrity: sha512-1FH/IiruXZ84tpUlm0aCUEwMl2Ho5ilqVh0VvQXw+byAz/4SAciyHLlfmL5WYqsvD38oymdUwBss0LtK8m4s/A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -5989,12 +5935,6 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.2.1
-    dev: true
-
-  /get-tsconfig/4.6.2:
-    resolution: {integrity: sha512-E5XrT4CbbXcXWy+1jChlZmrmCwd5KGx502kDCXJJ7y898TtWW9FwoG5HfOLVRKmlmDGkWN2HM9Ho+/Y8F0sJDg==}
-    dependencies:
-      resolve-pkg-maps: 1.0.0
     dev: true
 
   /git-raw-commits/2.0.11:
@@ -8141,16 +8081,6 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /raw-body/2.5.2:
-    resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
-    engines: {node: '>= 0.8'}
-    dependencies:
-      bytes: 3.1.2
-      http-errors: 2.0.0
-      iconv-lite: 0.4.24
-      unpipe: 1.0.0
-    dev: true
-
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -8300,10 +8230,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       global-dirs: 0.1.1
-    dev: true
-
-  /resolve-pkg-maps/1.0.0:
-    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
     dev: true
 
   /resolve.exports/1.1.1:
@@ -8883,17 +8809,6 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 5.1.6
-    dev: true
-
-  /tsx/3.12.7:
-    resolution: {integrity: sha512-C2Ip+jPmqKd1GWVQDvz/Eyc6QJbGfE7NrR3fx5BpEHMZsEHoIxHL1j+lKdGobr8ovEyqeNkPLSKp6SCSOt7gmw==}
-    hasBin: true
-    dependencies:
-      '@esbuild-kit/cjs-loader': 2.4.2
-      '@esbuild-kit/core-utils': 3.1.0
-      '@esbuild-kit/esm-loader': 2.5.5
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /type-check/0.4.0:
