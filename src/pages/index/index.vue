@@ -11,9 +11,6 @@ function to(path: string) {
     <button @tap="to('/pages/login/index')">
       To Login
     </button>
-    <button @tap="to('/pages/test/index')">
-      To test
-    </button>
     <button @tap="to('/pages/icon/index')">
       To Icon
     </button>

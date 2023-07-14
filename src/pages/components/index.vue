@@ -27,6 +27,12 @@ function handleTo(name: string) {
     <button class="btn mt-3" @tap="handleTo('echarts')">
       Echarts
     </button>
+    <button class="btn mt-3" @tap="handleTo('loading')">
+      Loading
+    </button>
+    <button class="btn mt-3" @tap="handleTo('empty')">
+      Empty
+    </button>
     <button class="btn mt-3">
       按钮
     </button>
