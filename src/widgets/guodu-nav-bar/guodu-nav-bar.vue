@@ -23,9 +23,16 @@ const props = withDefaults(defineProps<{
 })
 
 const sysInfo = uni.getSystemInfoSync()
-const menuInfo = uni.getMenuButtonBoundingClientRect()
+let menuInfo = {
+  top: 0,
+  height: 44,
+}
+// #ifndef H5||APP-PLUS
+menuInfo = uni.getMenuButtonBoundingClientRect()
+// #endif
+
 const h = sysInfo?.statusBarHeight ?? 0
-const navHeight = `${(menuInfo.top - h) * 2 + menuInfo.height}px`
+const navHeight = ref(`${(menuInfo.top - h) * 2 + menuInfo.height}px`)
 function handleClickBack() {
   if (!props.canBack)
     return
