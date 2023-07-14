@@ -66,6 +66,12 @@
 			"style": {
 				"navigationBarTitleText": "Empty"
 			}
+		},
+		{
+			"path": "pages/components/pages/calendar",
+			"style": {
+				"navigationBarTitleText": "日历"
+			}
 		}
 	],
 	"globalStyle": {

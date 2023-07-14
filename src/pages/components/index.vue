@@ -33,6 +33,9 @@ function handleTo(name: string) {
     <button class="btn mt-3" @tap="handleTo('empty')">
       Empty
     </button>
+    <button class="btn mt-3" @tap="handleTo('calendar')">
+      日历
+    </button>
     <button class="btn mt-3">
       按钮
     </button>

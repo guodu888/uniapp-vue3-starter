@@ -15,11 +15,14 @@ declare global {
   const defineComponent: typeof import('vue')['defineComponent']
   const defineStore: typeof import('pinia')['defineStore']
   const effectScope: typeof import('vue')['effectScope']
+  const formatDate: typeof import('./src/composables/useDateFormat')['formatDate']
+  const formatTimeAgo: typeof import('./src/composables/useTimeAgo')['formatTimeAgo']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
+  const isClient: typeof import('./src/composables/index')['isClient']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -31,6 +34,7 @@ declare global {
   const mapWritableState: typeof import('pinia')['mapWritableState']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
+  const normalizeDate: typeof import('./src/composables/useDateFormat')['normalizeDate']
   const onActivated: typeof import('vue')['onActivated']
   const onAddToFavorites: typeof import('@dcloudio/uni-app')['onAddToFavorites']
   const onBackPress: typeof import('@dcloudio/uni-app')['onBackPress']
@@ -84,15 +88,20 @@ declare global {
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
-  const toValue: typeof import('vue')['toValue']
+  const toValue: typeof import('./src/composables/index')['toValue']
   const triggerRef: typeof import('vue')['triggerRef']
+  const tryOnScopeDispose: typeof import('./src/composables/index')['tryOnScopeDispose']
   const unref: typeof import('vue')['unref']
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useDateFormat: typeof import('./src/composables/useDateFormat')['useDateFormat']
   const useFetchPage: typeof import('./src/composables/useFetchPage')['useFetchPage']
+  const useIntervalFn: typeof import('./src/composables/useInterval')['useIntervalFn']
+  const useNow: typeof import('./src/composables/useNow')['useNow']
   const useSlots: typeof import('vue')['useSlots']
   const useTheme: typeof import('./src/composables/useTheme')['useTheme']
+  const useTimeAgo: typeof import('./src/composables/useTimeAgo')['useTimeAgo']
   const useUserStore: typeof import('./src/store/user')['useUserStore']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -118,11 +127,14 @@ declare module 'vue' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly formatDate: UnwrapRef<typeof import('./src/composables/useDateFormat')['formatDate']>
+    readonly formatTimeAgo: UnwrapRef<typeof import('./src/composables/useTimeAgo')['formatTimeAgo']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isClient: UnwrapRef<typeof import('./src/composables/index')['isClient']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
@@ -134,6 +146,7 @@ declare module 'vue' {
     readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly normalizeDate: UnwrapRef<typeof import('./src/composables/useDateFormat')['normalizeDate']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onAddToFavorites: UnwrapRef<typeof import('@dcloudio/uni-app')['onAddToFavorites']>
     readonly onBackPress: UnwrapRef<typeof import('@dcloudio/uni-app')['onBackPress']>
@@ -186,15 +199,20 @@ declare module 'vue' {
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
-    readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
+    readonly toValue: UnwrapRef<typeof import('./src/composables/index')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
+    readonly tryOnScopeDispose: UnwrapRef<typeof import('./src/composables/index')['tryOnScopeDispose']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDateFormat: UnwrapRef<typeof import('./src/composables/useDateFormat')['useDateFormat']>
     readonly useFetchPage: UnwrapRef<typeof import('./src/composables/useFetchPage')['useFetchPage']>
+    readonly useIntervalFn: UnwrapRef<typeof import('./src/composables/useInterval')['useIntervalFn']>
+    readonly useNow: UnwrapRef<typeof import('./src/composables/useNow')['useNow']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTheme: UnwrapRef<typeof import('./src/composables/useTheme')['useTheme']>
+    readonly useTimeAgo: UnwrapRef<typeof import('./src/composables/useTimeAgo')['useTimeAgo']>
     readonly useUserStore: UnwrapRef<typeof import('./src/store/user')['useUserStore']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
@@ -214,11 +232,14 @@ declare module '@vue/runtime-core' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly formatDate: UnwrapRef<typeof import('./src/composables/useDateFormat')['formatDate']>
+    readonly formatTimeAgo: UnwrapRef<typeof import('./src/composables/useTimeAgo')['formatTimeAgo']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isClient: UnwrapRef<typeof import('./src/composables/index')['isClient']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
@@ -230,6 +251,7 @@ declare module '@vue/runtime-core' {
     readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly normalizeDate: UnwrapRef<typeof import('./src/composables/useDateFormat')['normalizeDate']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onAddToFavorites: UnwrapRef<typeof import('@dcloudio/uni-app')['onAddToFavorites']>
     readonly onBackPress: UnwrapRef<typeof import('@dcloudio/uni-app')['onBackPress']>
@@ -282,15 +304,20 @@ declare module '@vue/runtime-core' {
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
-    readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
+    readonly toValue: UnwrapRef<typeof import('./src/composables/index')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
+    readonly tryOnScopeDispose: UnwrapRef<typeof import('./src/composables/index')['tryOnScopeDispose']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDateFormat: UnwrapRef<typeof import('./src/composables/useDateFormat')['useDateFormat']>
     readonly useFetchPage: UnwrapRef<typeof import('./src/composables/useFetchPage')['useFetchPage']>
+    readonly useIntervalFn: UnwrapRef<typeof import('./src/composables/useInterval')['useIntervalFn']>
+    readonly useNow: UnwrapRef<typeof import('./src/composables/useNow')['useNow']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTheme: UnwrapRef<typeof import('./src/composables/useTheme')['useTheme']>
+    readonly useTimeAgo: UnwrapRef<typeof import('./src/composables/useTimeAgo')['useTimeAgo']>
     readonly useUserStore: UnwrapRef<typeof import('./src/store/user')['useUserStore']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
