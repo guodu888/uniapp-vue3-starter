@@ -20,8 +20,5 @@ function to(path: string) {
     <button @tap="to('/pages/fetchPage/index')">
       To FetchPage
     </button>
-    <button @tap="to('/pages/echarts/index')">
-      To Echarts Page
-    </button>
   </view>
 </template>

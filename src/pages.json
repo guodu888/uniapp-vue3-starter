@@ -36,10 +36,6 @@
 			}
 		},
 		{
-			"path": "pages/echarts/index",
-			"style": {}
-		},
-		{
 			"path": "pages/components/index",
 			"style": {
 				"navigationBarTitleText": "组件",
@@ -58,30 +54,36 @@
 				"navigationBarTitleText": "导航栏",
 				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path": "pages/components/pages/echarts",
+			"style": {
+				"navigationBarTitleText": "图表"
+			}
 		}
 	],
 	"globalStyle": {
-    "navigationBarTitleText": "uni-app模板",
-    "backgroundColor": "@backgroundColor",
-    "navigationBarBackgroundColor": "@navBgColor",
-    "navigationBarTextStyle": "@navTxtStyle"
-  },
+		"navigationBarTitleText": "uni-app模板",
+		"backgroundColor": "@backgroundColor",
+		"navigationBarBackgroundColor": "@navBgColor",
+		"navigationBarTextStyle": "@navTxtStyle"
+	},
 	"easycom": {
 		"^guodu-(.*)": "@/widgets/guodu-$1/guodu-$1.vue",
 		"^shy-(.*)": "@/components/shy-$1/shy-$1.vue"
 	},
 	"tabBar": {
 		"color": "#cccccc",
-    "selectedColor": "#3391EA",
-    "borderStyle": "@tabbarBorderStyle",
-    "backgroundColor": "@navBgColor",
+		"selectedColor": "#3391EA",
+		"borderStyle": "@tabbarBorderStyle",
+		"backgroundColor": "@navBgColor",
 		"list": [
 			{
-        "pagePath": "pages/index/index",
-        "iconPath": "static/icon/tabbar/index.png",
-        "selectedIconPath": "static/icon/tabbar/indexSelected.png",
-        "text": "主页"
-      },
+				"pagePath": "pages/index/index",
+				"iconPath": "static/icon/tabbar/index.png",
+				"selectedIconPath": "static/icon/tabbar/indexSelected.png",
+				"text": "主页"
+			},
 			{
 				"pagePath": "pages/components/index",
 				"iconPath": "static/icon/tabbar/components.png",
@@ -89,11 +91,11 @@
 				"text": "组件"
 			},
 			{
-        "pagePath": "pages/mine/index",
-        "iconPath": "static/icon/tabbar/mine.png",
-        "selectedIconPath": "static/icon/tabbar/mineSelected.png",
-        "text": "我的"
-      }
+				"pagePath": "pages/mine/index",
+				"iconPath": "static/icon/tabbar/mine.png",
+				"selectedIconPath": "static/icon/tabbar/mineSelected.png",
+				"text": "我的"
+			}
 		]
 	}
 }

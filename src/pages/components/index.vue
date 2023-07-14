@@ -24,6 +24,9 @@ function handleTo(name: string) {
     <button class="btn mt-3" @tap="handleTo('nav-bar')">
       Nav Bar
     </button>
+    <button class="btn mt-3" @tap="handleTo('echarts')">
+      Echarts
+    </button>
     <button class="btn mt-3">
       按钮
     </button>
