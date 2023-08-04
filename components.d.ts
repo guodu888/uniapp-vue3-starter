@@ -13,13 +13,8 @@ declare module 'vue' {
     GuoduDrawerHeader: typeof import('./src/widgets/guodu-drawer-header/guodu-drawer-header.vue')['default']
     GuoduEcharts: typeof import('./src/widgets/guodu-echarts/guodu-echarts.vue')['default']
     GuoduEmpty: typeof import('./src/widgets/guodu-empty/guodu-empty.vue')['default']
-    GuoduGrid: typeof import('./src/widgets/guodu-grid/guodu-grid.vue')['default']
-    GuoduList: typeof import('./src/widgets/guodu-list/guodu-list.vue')['default']
-    GuoduListItem: typeof import('./src/widgets/guodu-list-item/guodu-list-item.vue')['default']
     GuoduLoading: typeof import('./src/widgets/guodu-loading/guodu-loading.vue')['default']
     GuoduNavBar: typeof import('./src/widgets/guodu-nav-bar/guodu-nav-bar.vue')['default']
-    GuoduSeletor: typeof import('./src/widgets/guodu-seletor/guodu-seletor.vue')['default']
-    GuoduTabs: typeof import('./src/widgets/guodu-tabs/guodu-tabs.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
