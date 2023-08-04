@@ -24,8 +24,43 @@ cd uniapp-vue3-starter
 pnpm install 
 ```
 
-> It is recommended to use [`antfu/ni`](https://github.com/antfu/ni).
+> 推荐使用 [`antfu/ni`](https://github.com/antfu/ni).
 
+## Directory Structure
+```
+.
+├── index.html
+├── lint-staged.config.js
+├── mock - Mock
+│   └── express.js
+├── package.json
+├── pnpm-lock.yaml
+├── preset-rem-to-rpx.ts
+├── src
+│   ├── App.vue
+│   ├── components - 业务组件目录
+│   ├── composables - 组合式API目录
+│   ├── config
+│   ├── icons
+│   ├── main.ts
+│   ├── manifest.json - uniapp配置文件
+│   ├── pages - 页面目录
+│   ├── pages.json - uniapp配置文件
+│   ├── static
+│   ├── store - pinia store
+│   ├── styles
+│   ├── theme.json - 主题json配置文件
+│   ├── types
+│   ├── utils
+│   └── widgets - 公共组件目录
+├── tsconfig.json - TS configuration file
+├── unocss.config.ts - unocss configuration file
+├── LICENSE
+├── README.md
+├── auto-imports.d.ts
+├── components.d.ts
+└── vite.config.ts - Vite configuration file
+```
 
 ##  License
 
