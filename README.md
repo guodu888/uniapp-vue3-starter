@@ -4,6 +4,8 @@
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/) - born with fastness
 
+- 🍍 [Pinia](https://pinia.vuejs.org/) The intuitive store for Vue.js
+
 - 📦 Components auto importing(use [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) & [easycom](https://zh.uniapp.dcloud.io/collocation/pages.html#easycom))
 
 - 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
