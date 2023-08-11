@@ -2,7 +2,7 @@
  * @Author: shaohang-shy
  * @Date: 2023-07-14 16:29:04
  * @LastEditors: shaohang-shy
- * @LastEditTime: 2023-07-14 16:29:04
+ * @LastEditTime: 2023-08-11 14:32:26
  * @Description: calendar
 -->
 <script setup lang="ts">
@@ -19,7 +19,7 @@ const showSelectTimeRange = ref(false)
 
 <template>
   <div class="p-3">
-    <guodu-calendar mode="single" :value="0" />
+    <guodu-calendar mode="week" :value="0" :start-week="0" />
     <view class="mt-3">
       {{ selectTimeFormat }}
     </view>

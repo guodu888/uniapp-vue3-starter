@@ -8,11 +8,30 @@ export interface DateItem {
   isSelectedStart: boolean
   isSelectedEnd: boolean
 }
+export function getYearWeek(time: Date) { // a为年 b为月 c为日
+  const date1 = new Date(time.getFullYear(), time.getMonth(), time.getDate())
+  const date2 = new Date(time.getFullYear(), 0, 1)
+  // 判断date2是星期几
+  // 周 1 减一天
+  // 周 2 减两天
+  // 周 3 减三天
+  // 周 4 减四天
+  // 周 5 减五天
+  // 周 5 减五天
+  // 周 6 减六天
+  // 周 日 减7天
+  // 以周一为起点
+  // 1月1号是第一周
+  const day = date2.getDay()
+  return Math.ceil(Math.round((date1.valueOf() - date2.valueOf() + (day === 0 ? 86400000 * 7 : 86400000 * (day))) / 86400000) / 7)
+}
 
 class Calendar {
   date: Date
   weeks: DateItem[] = []
   selected: [number, number]
+  weekNos: number[] = []
+  beginWeekNo = 0
   setDate(date: string | Date) {
     this.date = new Date(date)
     this.updateWeeks()
@@ -28,7 +47,8 @@ class Calendar {
     this.updateWeeks()
   }
 
-  constructor(date: string | Date, selected: [number, number]) {
+  constructor(date: string | Date, selected: [number, number], beginWeekNo: 0 | 1) {
+    this.beginWeekNo = beginWeekNo
     // 将date转换为Date对象
     this.date = new Date(date)
     // 将selected转为当日0点的时间戳以及第二天0点的时间戳
@@ -46,13 +66,16 @@ class Calendar {
     const endTimestamp = this.selected[1]
     // 清空weeks
     this.weeks = []
+    this.weekNos = []
     const year = this.date.getFullYear()
     const month = this.date.getMonth()
     // 获取1号是周几
-    const week = new Date(year, month, 1).getDay()
+    let week = new Date(year, month, 1).getDay()
+    if (this.beginWeekNo === 1 && week === 0)
+      week = 7
     // 将周日到week放入weeks中
     for (let i = 0; i < week; i++) {
-      const m = month === 0 ? 12 : month - 1
+      const m = month === 0 ? 11 : month - 1
       const y = month === 0 ? year - 1 : year
       const d = new Date(y, m + 1, 0).getDate() - week + i + 1
       const timestamp = new Date(y, m, d).getTime()
@@ -60,13 +83,15 @@ class Calendar {
         year: y,
         month: m,
         day: d,
-        week: i,
+        week: i % 7,
         currentMonth: false,
         isSelected: timestamp >= startTimestamp && timestamp <= endTimestamp,
         isSelectedStart: timestamp === startTimestamp,
         isSelectedEnd: timestamp + 24 * 60 * 60 * 1000 - 1 === endTimestamp,
-
       })
+      // 如果是周一的话 往weekNos中push一周
+      if (i === 1)
+        this.weekNos.push(getYearWeek(new Date(y, m, d)))
     }
     // 获取本月一共多少天
     const currentMonthDays = new Date(year, month + 1, 0).getDate()
@@ -83,6 +108,8 @@ class Calendar {
         isSelectedStart: timestamp === startTimestamp,
         isSelectedEnd: timestamp + 24 * 60 * 60 * 1000 - 1 === endTimestamp,
       })
+      if ((week + i - 1) % 7 === 1)
+        this.weekNos.push(getYearWeek(new Date(year, month, i)))
     }
     // 如果weeks不够42个则把下个月的天数放入weeks中
     if (this.weeks.length < 42) {
@@ -101,6 +128,8 @@ class Calendar {
           isSelectedStart: timestamp === startTimestamp,
           isSelectedEnd: timestamp + 24 * 60 * 60 * 1000 - 1 === endTimestamp,
         })
+        if ((week + currentMonthDays + i - 1) % 7 === 1)
+          this.weekNos.push(getYearWeek(new Date(y, m, i)))
       }
     }
   }
