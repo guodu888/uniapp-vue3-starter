@@ -43,6 +43,12 @@
 			}
 		},
 		{
+			"path": "pages/components/pages/modal",
+			"style": {
+				"navigationBarTitleText": "抽屉/Modal"
+			}
+		},
+		{
 			"path": "pages/components/pages/nav-bar",
 			"style": {
 				"navigationBarTitleText": "导航栏",

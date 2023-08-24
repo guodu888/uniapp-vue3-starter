@@ -2,7 +2,7 @@
  * @Author: shaohang-shy
  * @Date: 2023-05-05 13:59:10
  * @LastEditors: shaohang-shy
- * @LastEditTime: 2023-05-05 13:59:10
+ * @LastEditTime: 2023-08-24 17:02:24
  * @Description: components
 -->
 <script setup lang="ts">
@@ -20,6 +20,9 @@ function handleTo(name: string) {
     </div>
     <button class="btn mt-3" @tap="handleTo('drawer')">
       弹窗/抽屉
+    </button>
+    <button class="btn mt-3" @tap="handleTo('modal')">
+      弹窗/Modal
     </button>
     <button class="btn mt-3" @tap="handleTo('nav-bar')">
       Nav Bar
