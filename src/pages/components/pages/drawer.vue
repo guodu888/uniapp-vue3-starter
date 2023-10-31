@@ -21,7 +21,7 @@ function onDrawerClosed() {
 
 <template>
   <div class="p-3">
-    <guodu-drawer
+    <GuoduDrawer
       :visible="drawerVisible"
       :mask-click="maskClick"
       :mode="mode"
@@ -30,33 +30,33 @@ function onDrawerClosed() {
       @close="onDrawerClosed"
     >
       <template #header>
-        <guodu-drawer-header title="抽屉/弹窗" @close="drawerVisible = false" />
+        <GuoduDrawerHeader title="抽屉/弹窗" @close="drawerVisible = false" />
       </template>
       <button class="btn" @tap="drawerVisible = false">
         关闭弹窗
       </button>
-    </guodu-drawer>
+    </GuoduDrawer>
     <button class="btn" @tap="drawerVisible = true">
       打开
     </button>
-    <div class="flex flex-col gap-3 mt-3">
-      <radio :checked="mode === 'top'" @tap="mode = 'top'">
+    <div class="mt-3 flex flex-col gap-3">
+      <Radio :checked="mode === 'top'" @tap="mode = 'top'">
         从上到下
-      </radio>
-      <radio :checked="mode === 'bottom'" @tap="mode = 'bottom'">
+      </Radio>
+      <Radio :checked="mode === 'bottom'" @tap="mode = 'bottom'">
         从下到上
-      </radio>
-      <radio :checked="mode === 'left'" @tap="mode = 'left'">
+      </Radio>
+      <Radio :checked="mode === 'left'" @tap="mode = 'left'">
         从左到右
-      </radio>
-      <radio :checked="mode === 'right'" @tap="mode = 'right'">
+      </Radio>
+      <Radio :checked="mode === 'right'" @tap="mode = 'right'">
         从右到左
-      </radio>
+      </Radio>
     </div>
-    <div class="flex mt-3 justify-start items-center gap-3">
+    <div class="mt-3 flex gap-3 justify-start items-center">
       是否开启圆角 <switch :checked="showRadius" @change="(e: any) => showRadius = e.detail.value" />
     </div>
-    <div class="flex mt-3 justify-start items-center gap-3">
+    <div class="mt-3 flex gap-3 justify-start items-center">
       点击阴影触发关闭 <switch :checked="maskClick" @change="(e: any) => maskClick = e.detail.value" />
     </div>
   </div>

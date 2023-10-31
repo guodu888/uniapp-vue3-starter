@@ -2,14 +2,15 @@
 /**
  * guodu echarts 兼容uni-app
  * @description guodu echart兼容uni-app
- * @property {Object} options 图表配置数据
- * @property {String} canvasId 画布id
+ * @property {object} options 图表配置数据
+ * @property {string} canvasId 画布id
  * @example <guodu-echarts ref="echarts" :options="options" canvasId="echarts"></guodu-echarts>
  */
 import type { ECharts } from 'echarts'
 import type { ECOption } from './echarts'
 import echarts from './echarts'
 import WxCanvas from './wx-canvas.js'
+
 const props = defineProps<{
   canvasId: string
   options: ECOption
@@ -42,7 +43,8 @@ onBeforeUnmount(() => {
 
 // #ifdef H5
 // H5绘制图表
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// eslint忽略下面的错误
+// eslint-disable-next-line ts/ban-ts-comment
 // @ts-expect-error
 function initChart(options: Record<string, any>) {
   ctx = uni.createCanvasContext(props.canvasId, instance)
@@ -55,7 +57,7 @@ function initChart(options: Record<string, any>) {
   exposeObj.chart = chartInstance
 }
 // H5生成图片
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// eslint-disable-next-line ts/ban-ts-comment
 // @ts-expect-error
 function canvasToTempFilePath(opt: { success: (arg0: { tempFilePath: string }) => any }) {
   const base64 = chartInstance.getDataURL()
@@ -65,9 +67,9 @@ exposeObj.canvasToTempFilePath = canvasToTempFilePath
 // #endif
 // #ifndef H5
 // 绘制图表
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// eslint-disable-next-line ts/ban-ts-comment
 // @ts-expect-error
-// eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures, @typescript-eslint/no-redeclare
+// eslint-disable-next-line ts/no-redeclare
 async function initChart(options: Record<string, any>) {
   const canvasAttr = await getCanvasAttr()
   const { canvas, canvasWidth, canvasHeight, canvasDpr } = canvasAttr
@@ -76,7 +78,7 @@ async function initChart(options: Record<string, any>) {
     height: canvasHeight,
     devicePixelRatio: canvasDpr, // new
   }) as unknown as ECharts
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // eslint-disable-next-line ts/ban-ts-comment
   // @ts-expect-error
   canvas.setChart(chartInstance)
   chartInstance.clear()
@@ -87,9 +89,9 @@ async function initChart(options: Record<string, any>) {
   exposeObj.chart = chartInstance
 }
 // 生成图片
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// eslint-disable-next-line ts/ban-ts-comment
 // @ts-expect-error
-// eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures, @typescript-eslint/no-redeclare
+// eslint-disable-next-line ts/no-redeclare
 function canvasToTempFilePath(opt: UniApp.CanvasToTempFilePathOptions) {
   // #ifdef MP-WEIXIN || MP-ALIPAY || MP-BAIDU || MP-TOUTIAO
   const query = uni
@@ -99,7 +101,7 @@ function canvasToTempFilePath(opt: UniApp.CanvasToTempFilePathOptions) {
   // #endif
   query
     .select(`#${props.canvasId}`)
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // eslint-disable-next-line ts/ban-ts-comment
     // @ts-expect-error
     .fields({ node: true, size: true })
     .exec((res) => {
@@ -130,7 +132,7 @@ function getCanvasAttr(): Promise<{
     const query = uni.createSelectorQuery().in(instance)
     query
       .select(`#${props.canvasId}`)
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // eslint-disable-next-line ts/ban-ts-comment
       // @ts-expect-error
       .fields({ node: true, size: true })
       .exec((res) => {
@@ -154,7 +156,7 @@ function getCanvasAttr(): Promise<{
   })
   // #endif
   // #ifndef MP-WEIXIN || MP-ALIPAY || MP-BAIDU || MP-TOUTIAO
-  // eslint-disable-next-line no-unreachable
+
   return new Promise((resolve, _reject) => {
     ctx = uni.createCanvasContext(props.canvasId, instance)
     const canvas = new WxCanvas(ctx, props.canvasId, false, null)
@@ -170,10 +172,10 @@ function getCanvasAttr(): Promise<{
     query
       .select(`#${props.canvasId}`)
       .boundingClientRect((res) => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // eslint-disable-next-line ts/ban-ts-comment
         // @ts-expect-error
         const canvasWidth = res.width
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // eslint-disable-next-line ts/ban-ts-comment
         // @ts-expect-error
         const canvasHeight = res.height
         resolve({

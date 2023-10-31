@@ -11,14 +11,14 @@ const showBack = ref(true)
 </script>
 
 <template>
-  <guodu-nav-bar :title="title" :show-back="showBack">
+  <GuoduNavBar :title="title" :show-back="showBack">
     <template v-if="showBack" #icon>
       返回
     </template>
-  </guodu-nav-bar>
+  </GuoduNavBar>
   <div class="p-3">
     <input v-model="title" class="border" placeholder="请输入导航栏">
-    <div class="flex mt-3 justify-start items-center gap-3">
+    <div class="mt-3 flex gap-3 justify-start items-center">
       显示返回图标 <switch :checked="showBack" @change="(e: any) => showBack = e.detail.value" />
     </div>
   </div>

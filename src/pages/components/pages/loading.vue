@@ -12,8 +12,8 @@
 <template>
   <div class="p-3 w-full">
     loading
-    <guodu-loading class="m-3" />
-    <guodu-loading type="dot-line" class="m-3" />
-    <guodu-loading type="dot-circle" class="m-3" />
+    <GuoduLoading class="m-3" />
+    <GuoduLoading type="dot-line" class="m-3" />
+    <GuoduLoading type="dot-circle" class="m-3" />
   </div>
 </template>

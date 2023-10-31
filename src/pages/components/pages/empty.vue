@@ -12,7 +12,7 @@
 <template>
   <div class="p-3">
     Empty
-    <guodu-empty />
-    <guodu-empty message="自定义Message" />
+    <GuoduEmpty />
+    <GuoduEmpty message="自定义Message" />
   </div>
 </template>

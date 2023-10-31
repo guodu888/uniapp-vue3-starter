@@ -25,9 +25,9 @@ withDefaults(
 </script>
 
 <template>
-  <view class="w-full flex-col flex-center my-50rpx w-full">
+  <view class="my-50rpx flex-center flex-col w-full w-full">
     <image class="w-1/2" mode="widthFix" :src="url" />
-    <text v-if="message" class="mt-35rpx leading-24rpx color-$text-color-3 text-24rpx">
+    <text v-if="message" class="mt-35rpx text-24rpx leading-24rpx color-$text-color-3">
       {{ message }}
     </text>
   </view>

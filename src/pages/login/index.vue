@@ -30,21 +30,21 @@ function handleLoginByCode() { }
 </script>
 
 <template>
-  <view class="flex flex-col justify-center items-center w-full" style="padding-top: 150rpx;">
+  <view class="flex flex-col w-full justify-center items-center" style="padding-top: 150rpx;">
     <!-- 头部logo -->
-    <image class="w-150 h-150" src="~/~/static/logo.png" />
+    <image class="h-150 w-150" src="~/~/static/logo.png" />
     <!-- 账号 -->
-    <input v-model="account" type="text" placeholder="请输入账号" class="w-80% h-100 shadow-$box-shadow-3 rounded-full my-5 px-5 input" style="margin-top: 50rpx;">
+    <input v-model="account" type="text" placeholder="请输入账号" class="input px-5 my-5 rounded-full shadow-$box-shadow-3 h-100 w-80%" style="margin-top: 50rpx;">
     <!-- 密码 -->
-    <input v-model="pwd" type="password" placeholder="请输入密码" class="w-80% h-100 shadow-$box-shadow-3 rounded-full my-5 px-5 input">
+    <input v-model="pwd" type="password" placeholder="请输入密码" class="input px-5 my-5 rounded-full shadow-$box-shadow-3 h-100 w-80%">
     <!-- 登录按钮 -->
     <button class="btn btn-primary" @tap="handleLogin">
       登录
     </button>
     <!-- 快捷登录 -->
     <!-- #ifdef MP-WEIXIN -->
-    <view class="flex flex-col justify-center items-center fixed bottom-50">
-      <image class="w-80 h-80 shadow-$box-shadow-1 rounded-50rpx p-2" src="../../static/icon/wechat.png" @tap="handleLoginByCode" />
+    <view class="flex flex-col fixed justify-center items-center bottom-50">
+      <image class="p-2 rounded-50rpx shadow-$box-shadow-1 h-80 w-80" src="../../static/icon/wechat.png" @tap="handleLoginByCode" />
     </view>
     <!-- #endif -->
   </view>

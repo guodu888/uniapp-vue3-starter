@@ -2,6 +2,7 @@
 // 导入 app.js
 const bodyParser = require('body-parser')
 const express = require('express')
+
 const app = express()
 app.use(bodyParser())
 
@@ -248,8 +249,8 @@ app.get('/api/user/list', (req, res) => {
     data: {
       page_size,
       page_no,
-      count: userList.filter(x => parseInt(sex) === 0 || parseInt(x.sex) === parseInt(sex)).length,
-      list: userList.filter(x => parseInt(sex) === 0 || parseInt(x.sex) === parseInt(sex)).slice((page_no - 1) * page_size, page_no * page_size),
+      count: userList.filter(x => Number.parseInt(sex) === 0 || Number.parseInt(x.sex) === Number.parseInt(sex)).length,
+      list: userList.filter(x => Number.parseInt(sex) === 0 || Number.parseInt(x.sex) === Number.parseInt(sex)).slice((page_no - 1) * page_size, page_no * page_size),
     },
   })
 })

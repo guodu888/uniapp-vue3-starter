@@ -23,7 +23,9 @@ export function Fetch<T = any>(url: string, options: Partial<FetchOptions>): Pro
         const _data = res.data as FetchResult<T>
         if (res.statusCode >= 200 && res.statusCode <= 299) {
           const data = _data.data
-          if (_data.code === 0) { resolve(data) }
+          if (_data.code === 0) {
+            resolve(data)
+          }
           else {
             if (options.showErrToast !== false)
               uni.showToast({ title: _data.msg, icon: 'none' })

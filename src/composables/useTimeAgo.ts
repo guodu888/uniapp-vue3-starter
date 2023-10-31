@@ -2,7 +2,7 @@
  * @Author: shaohang-shy
  * @Date: 2023-06-08 14:24:35
  * @LastEditors: shaohang-shy
- * @LastEditTime: 2023-06-08 15:47:05
+ * @LastEditTime: 2023-10-31 11:24:47
  * @Description: useTimeAgo
  */
 
@@ -89,7 +89,7 @@ const DEFAULT_UNITS: UseTimeAgoUnit<UseTimeAgoUnitNamesDefault>[] = [
   { max: 518400000, value: 86400000, name: 'day' },
   { max: 2419200000, value: 604800000, name: 'week' },
   { max: 28512000000, value: 2592000000, name: 'month' },
-  { max: Infinity, value: 31536000000, name: 'year' },
+  { max: Number.POSITIVE_INFINITY, value: 31536000000, name: 'year' },
 ]
 
 const DEFAULT_MESSAGES: UseTimeAgoMessages<UseTimeAgoUnitNamesDefault> = {
@@ -132,7 +132,8 @@ export type UseTimeAgoReturn = ComputedRef<string>
  * Reactive time ago formatter.
  *
  * @see https://vueuse.org/useTimeAgo
- * @param options
+ * @param time time to format
+ * @param options options
  */
 export function useTimeAgo<UnitNames extends string = UseTimeAgoUnitNamesDefault>(time: MaybeRefOrGetter<Date | number | string>, options: UseTimeAgoOptions<UnitNames> = {}) {
   const {

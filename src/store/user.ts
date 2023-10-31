@@ -32,7 +32,7 @@ export const useUserStore = defineStore('user', () => {
     return new Promise((resolve) => {
       Fetch<UserInfo>(api.getUserInfo, {}).then((resData) => {
         userInfo.value = resData
-        const currentUserRoleId: number = parseInt(getUserRoleId() ?? '0')
+        const currentUserRoleId: number = Number.parseInt(getUserRoleId() ?? '0')
         const r = resData.roles.find(x => x.id === currentUserRoleId)
         setRole(r || (resData.roles?.[0] ?? null))
         resolve({})

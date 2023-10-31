@@ -3,15 +3,15 @@
 </script>
 
 <template>
-  <div class="p-3 top-bg">
+  <div class="top-bg p-3">
     <div class="mt-60rpx text-xl font-bold">
       我的
     </div>
-    <div class="w-full flex flex-col mt-5 items-center">
-      <div class="bg-white p-5rpx rounded-full w-160rpx h-160rpx">
-        <image class="w-150rpx h-150rpx rounded-full" src="https://guodu-homework.oss-cn-beijing.aliyuncs.com/static/student/avatar.jpg" />
+    <div class="mt-5 flex flex-col w-full items-center">
+      <div class="p-5rpx bg-white rounded-full h-160rpx w-160rpx">
+        <image class="rounded-full h-150rpx w-150rpx" src="https://guodu-homework.oss-cn-beijing.aliyuncs.com/static/student/avatar.jpg" />
       </div>
-      <div class="font-bold mt-3">
+      <div class="mt-3 font-bold">
         张小虎同学
       </div>
     </div>

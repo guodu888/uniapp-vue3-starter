@@ -44,7 +44,7 @@ const chartData1 = ref<ECOption>({
   ],
 })
 setTimeout(() => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // eslint-disable-next-line ts/ban-ts-comment
   // @ts-expect-error
   chartData1.value.series[0].data = [51, 130, 50, 40, 60, 80, 55]
 }, 2000)
@@ -285,8 +285,8 @@ const chartData4 = ref<ECOption>({
     <p class="my-3">
       柱状图
     </p>
-    <div class="w-full h-40vh">
-      <guodu-echarts
+    <div class="h-40vh w-full">
+      <GuoduEcharts
         ref="echarts"
         :options="chartData1" canvas-id="chartData1"
       />
@@ -294,8 +294,8 @@ const chartData4 = ref<ECOption>({
     <p class="my-3">
       渐变堆叠面积图
     </p>
-    <div class="w-full h-40vh">
-      <guodu-echarts
+    <div class="h-40vh w-full">
+      <GuoduEcharts
         ref="echarts"
         :options="chartData2" canvas-id="chartData2"
       />
@@ -303,8 +303,8 @@ const chartData4 = ref<ECOption>({
     <p class="my-3">
       基础南丁格尔玫瑰图
     </p>
-    <div class="w-full h-40vh">
-      <guodu-echarts
+    <div class="h-40vh w-full">
+      <GuoduEcharts
         ref="echarts"
         :options="chartData3" canvas-id="chartData3"
       />
@@ -312,8 +312,8 @@ const chartData4 = ref<ECOption>({
     <p class="my-3">
       基础雷达图
     </p>
-    <div class="w-full h-40vh">
-      <guodu-echarts
+    <div class="h-40vh w-full">
+      <GuoduEcharts
         ref="echarts"
         :options="chartData4" canvas-id="chartData4"
       />

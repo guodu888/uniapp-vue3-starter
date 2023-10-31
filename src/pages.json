@@ -1,119 +1,119 @@
 {
-	"pages": [
-		{
-			"path": "pages/login/index",
-			"style": {}
-		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "主页"
-			}
-		},
-		{
-			"path": "pages/mine/index",
-			"style": {
-				"navigationBarTitleText": "我的",
-				"navigationStyle": "custom"
-			}
-		},
-		{
-			"path": "pages/icon/index",
-			"style": {
-				"navigationBarTitleText": "Icon"
-			}
-		},
-		{
-			"path": "pages/fetchPage/index",
-			"style": {
-				"enablePullDownRefresh": true
-			}
-		},
-		{
-			"path": "pages/components/index",
-			"style": {
-				"navigationBarTitleText": "组件",
-				"navigationStyle": "custom"
-			}
-		},
-		{
-			"path": "pages/components/pages/drawer",
-			"style": {
-				"navigationBarTitleText": "抽屉/弹窗"
-			}
-		},
-		{
-			"path": "pages/components/pages/modal",
-			"style": {
-				"navigationBarTitleText": "抽屉/Modal"
-			}
-		},
-		{
-			"path": "pages/components/pages/nav-bar",
-			"style": {
-				"navigationBarTitleText": "导航栏",
-				"navigationStyle": "custom"
-			}
-		},
-		{
-			"path": "pages/components/pages/echarts",
-			"style": {
-				"navigationBarTitleText": "图表"
-			}
-		},
-		{
-			"path": "pages/components/pages/loading",
-			"style": {
-				"navigationBarTitleText": "Loading"
-			}
-		},
-		{
-			"path": "pages/components/pages/empty",
-			"style": {
-				"navigationBarTitleText": "Empty"
-			}
-		},
-		{
-			"path": "pages/components/pages/calendar",
-			"style": {
-				"navigationBarTitleText": "日历"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTitleText": "uni-app模板",
-		"backgroundColor": "@backgroundColor",
-		"navigationBarBackgroundColor": "@navBgColor",
-		"navigationBarTextStyle": "@navTxtStyle"
-	},
-	"easycom": {
-		"^guodu-(.*)": "@/widgets/guodu-$1/guodu-$1.vue",
-		"^shy-(.*)": "@/components/shy-$1/shy-$1.vue"
-	},
-	"tabBar": {
-		"color": "#cccccc",
-		"selectedColor": "#3391EA",
-		"borderStyle": "@tabbarBorderStyle",
-		"backgroundColor": "@navBgColor",
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"iconPath": "static/icon/tabbar/index.png",
-				"selectedIconPath": "static/icon/tabbar/indexSelected.png",
-				"text": "主页"
-			},
-			{
-				"pagePath": "pages/components/index",
-				"iconPath": "static/icon/tabbar/components.png",
-				"selectedIconPath": "static/icon/tabbar/componentsSelected.png",
-				"text": "组件"
-			},
-			{
-				"pagePath": "pages/mine/index",
-				"iconPath": "static/icon/tabbar/mine.png",
-				"selectedIconPath": "static/icon/tabbar/mineSelected.png",
-				"text": "我的"
-			}
-		]
-	}
+  "pages": [
+    {
+      "path": "pages/login/index",
+      "style": {}
+    },
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "主页"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/icon/index",
+      "style": {
+        "navigationBarTitleText": "Icon"
+      }
+    },
+    {
+      "path": "pages/fetchPage/index",
+      "style": {
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/components/index",
+      "style": {
+        "navigationBarTitleText": "组件",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/components/pages/drawer",
+      "style": {
+        "navigationBarTitleText": "抽屉/弹窗"
+      }
+    },
+    {
+      "path": "pages/components/pages/modal",
+      "style": {
+        "navigationBarTitleText": "抽屉/Modal"
+      }
+    },
+    {
+      "path": "pages/components/pages/nav-bar",
+      "style": {
+        "navigationBarTitleText": "导航栏",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/components/pages/echarts",
+      "style": {
+        "navigationBarTitleText": "图表"
+      }
+    },
+    {
+      "path": "pages/components/pages/loading",
+      "style": {
+        "navigationBarTitleText": "Loading"
+      }
+    },
+    {
+      "path": "pages/components/pages/empty",
+      "style": {
+        "navigationBarTitleText": "Empty"
+      }
+    },
+    {
+      "path": "pages/components/pages/calendar",
+      "style": {
+        "navigationBarTitleText": "日历"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTitleText": "uni-app模板",
+    "backgroundColor": "@backgroundColor",
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle"
+  },
+  "easycom": {
+    "^guodu-(.*)": "@/widgets/guodu-$1/guodu-$1.vue",
+    "^shy-(.*)": "@/components/shy-$1/shy-$1.vue"
+  },
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#3391EA",
+    "borderStyle": "@tabbarBorderStyle",
+    "backgroundColor": "@navBgColor",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon/tabbar/index.png",
+        "selectedIconPath": "static/icon/tabbar/indexSelected.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/components/index",
+        "iconPath": "static/icon/tabbar/components.png",
+        "selectedIconPath": "static/icon/tabbar/componentsSelected.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "static/icon/tabbar/mine.png",
+        "selectedIconPath": "static/icon/tabbar/mineSelected.png",
+        "text": "我的"
+      }
+    ]
+  }
 }

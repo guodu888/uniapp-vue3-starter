@@ -14,7 +14,7 @@ function handleTo(name: string) {
 </script>
 
 <template>
-  <div class="p-3 top-bg">
+  <div class="top-bg p-3">
     <div class="mt-60rpx text-xl font-bold">
       组件
     </div>

@@ -8,14 +8,15 @@ const path = {
 
 type ApiKeys = keyof typeof path
 
-type ApiPath = typeof path
+type ApiPath = {
+  [key in ApiKeys]: string
+}
 
-const getApi = () => {
+function getApi() {
   const Api = {} as ApiPath
   Object.keys(path).forEach((item) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    Api[item] = `${BASE_URL}${path[item as ApiKeys]}`
+    const key = item as ApiKeys
+    Api[key] = `${BASE_URL}${path[key]}`
   })
   return Api
 }

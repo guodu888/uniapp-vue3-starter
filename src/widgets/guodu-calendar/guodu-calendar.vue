@@ -63,7 +63,7 @@ watch(selectTime, () => {
   calendar.value.setSelected(Array.isArray(selectTime.value) ? selectTime.value : [selectTime.value, selectTime.value])
 })
 // 判断有没有插槽
-const hasSlot = (name: string) => {
+function hasSlot(name: string) {
   const slots = getCurrentInstance()?.slots
   return slots && slots[name]
 }
@@ -118,30 +118,30 @@ function handleCancel() {
 </script>
 
 <template>
-  <div class="w-full rounded-t-xl bg-white py-3">
+  <div class="py-3 bg-white rounded-t-xl w-full">
     <!-- 头部 -->
-    <div class="flex-center leading-80rpx">
+    <div class="leading-80rpx flex-center">
       <div class="i-carbon:chevron-left px-5" @tap="handleChangeLastMonth" />
-      <picker mode="date" fields="month" :value="date" @change="(e: any) => changeDate(e.detail.value)">
+      <Picker mode="date" fields="month" :value="date" @change="(e: any) => changeDate(e.detail.value)">
         {{ date }}
-      </picker>
+      </Picker>
       <div class="i-carbon:chevron-right px-5" @tap="handleChangeNextMonth" />
     </div>
     <div class="flex w-full">
-      <div v-if="props.mode === 'week'" class="w-80rpx h-full">
+      <div v-if="props.mode === 'week'" class="h-full w-80rpx">
         <!-- 这里展示周的序号 -->
-        <div class="flex-1 flex-center flex-col text-#333/80 h-80rpx text-#666/50">
+        <div class="text-#333/80 text-#666/50 flex-center flex-1 flex-col h-80rpx">
           周
         </div>
         <div class="grid grid-cols-1 gap-y-5rpx">
-          <div v-for="item in calendar.weekNos" :key="item" class="flex-center h-80rpx p-5rpx text-#666/50">
+          <div v-for="item in calendar.weekNos" :key="item" class="p-5rpx text-#666/50 flex-center h-80rpx">
             {{ item }}
           </div>
         </div>
       </div>
       <div class="flex-1">
         <div class="grid grid-cols-7">
-          <div v-for="week, idx in weekNames" :key="idx" class="flex-1 flex-center flex-col text-#333/80 h-80rpx">
+          <div v-for="week, idx in weekNames" :key="idx" class="text-#333/80 flex-center flex-1 flex-col h-80rpx">
             {{ week }}
           </div>
         </div>
@@ -149,8 +149,8 @@ function handleCancel() {
           <div v-for="day in calendar.weeks.splice(props.startWeek)" :key="`${day.month}-${day.day}`" class="h-80rpx" @tap="handleSelectDay(day)">
             <slot v-if="hasSlot('day')" name="day" :item="day" />
             <template v-else>
-              <div class="w-full h-full flex-center p-5rpx" :class="{ 'text-#aaa': !day.currentMonth, 'bg-#F6F7FA': day.isSelected && day.currentMonth, 'rounded-r-full': day.isSelectedEnd && day.currentMonth, 'rounded-l-full': day.isSelectedStart && day.currentMonth }">
-                <div class="w-full h-full flex-center" :class="{ 'bg-#0084ff text-white rounded-full': day.currentMonth && (day.isSelectedStart || day.isSelectedEnd) }">
+              <div class="p-5rpx flex-center h-full w-full" :class="{ 'text-#aaa': !day.currentMonth, 'bg-#F6F7FA': day.isSelected && day.currentMonth, 'rounded-r-full': day.isSelectedEnd && day.currentMonth, 'rounded-l-full': day.isSelectedStart && day.currentMonth }">
+                <div class="flex-center h-full w-full" :class="{ 'bg-#0084ff text-white rounded-full': day.currentMonth && (day.isSelectedStart || day.isSelectedEnd) }">
                   {{ day.day }}
                 </div>
               </div>
@@ -159,11 +159,11 @@ function handleCancel() {
         </div>
       </div>
     </div>
-    <div class="w-full p-3 p-b-0 flex gap-3">
-      <button class="flex-1 rounded-lg h-80rpx leading-80rpx bg-white b-solid b-1 b-#CAD1D9 text-36rpx" @tap="handleCancel">
+    <div class="p-3 p-b-0 flex gap-3 w-full">
+      <button class="bg-white b-1 b-#CAD1D9 rounded-lg b-solid text-36rpx leading-80rpx flex-1 h-80rpx" @tap="handleCancel">
         取消
       </button>
-      <button class="flex-1 rounded-lg h-80rpx leading-80rpx bg-#0084ff text-white text-32rpx" @tap="handleSubmit">
+      <button class="bg-#0084ff rounded-lg text-32rpx leading-80rpx text-white flex-1 h-80rpx" @tap="handleSubmit">
         确定
       </button>
     </div>

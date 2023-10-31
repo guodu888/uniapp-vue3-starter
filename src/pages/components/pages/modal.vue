@@ -20,26 +20,26 @@ function onDrawerClosed() {
 
 <template>
   <div class="p-3">
-    <guodu-modal
+    <GuoduModal
       :visible="visible"
       :mask-click="maskClick"
       :radius="showRadius"
       @close="onDrawerClosed"
     >
       <template #header>
-        <guodu-drawer-header title="抽屉/弹窗" @close="visible = false" />
+        <GuoduDrawerHeader title="抽屉/弹窗" @close="visible = false" />
       </template>
-      <div class="w-600rpx p-3">
+      <div class="p-3 w-600rpx">
         这是弹窗里面的内容
       </div>
-    </guodu-modal>
+    </GuoduModal>
     <button class="btn" @tap="visible = true">
       打开
     </button>
-    <div class="flex mt-3 justify-start items-center gap-3">
+    <div class="mt-3 flex gap-3 justify-start items-center">
       是否开启圆角 <switch :checked="showRadius" @change="(e: any) => showRadius = e.detail.value" />
     </div>
-    <div class="flex mt-3 justify-start items-center gap-3">
+    <div class="mt-3 flex gap-3 justify-start items-center">
       点击阴影触发关闭 <switch :checked="maskClick" @change="(e: any) => maskClick = e.detail.value" />
     </div>
   </div>
