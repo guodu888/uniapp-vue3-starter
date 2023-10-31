@@ -37,7 +37,7 @@
 // | `dddd` | Sunday-Saturday  | The name of the day of the week       |
 
 import type { MaybeRefOrGetter } from '.'
-import { toValue } from '.'
+import { toUnRefValue } from '.'
 
 export type DateLike = Date | number | string | undefined
 
@@ -135,7 +135,7 @@ export function normalizeDate(date: DateLike) {
  * @param options - UseDateFormatOptions
  */
 export function useDateFormat(date: MaybeRefOrGetter<DateLike>, formatStr: MaybeRefOrGetter<string> = 'YYYY-MM-DD HH:mm:ss', options: UseDateFormatOptions = {}) {
-  return computed(() => formatDate(normalizeDate(toValue(date)), toValue(formatStr), options))
+  return computed(() => formatDate(normalizeDate(toUnRefValue(date)), toUnRefValue(formatStr), options))
 }
 
 export type UseDateFormatReturn = ReturnType<typeof useDateFormat>

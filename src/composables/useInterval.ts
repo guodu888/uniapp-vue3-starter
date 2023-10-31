@@ -2,7 +2,7 @@
  * @Author: shaohang-shy
  * @Date: 2023-06-08 15:21:33
  * @LastEditors: shaohang-shy
- * @LastEditTime: 2023-06-08 15:22:54
+ * @LastEditTime: 2023-10-31 10:34:06
  * @Description: useInterfal
  */
 // Copy from useuse
@@ -55,7 +55,7 @@ export function useIntervalFn(cb: Fn, interval: MaybeRefOrGetter<number> = 1000,
   }
 
   function resume() {
-    const intervalValue = toValue(interval)
+    const intervalValue = toUnRefValue(interval)
     if (intervalValue <= 0)
       return
     isActive.value = true

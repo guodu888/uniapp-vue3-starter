@@ -2,7 +2,7 @@
  * @Author: shaohang-shy
  * @Date: 2023-05-09 14:04:11
  * @LastEditors: shaohang-shy
- * @LastEditTime: 2023-06-08 15:23:40
+ * @LastEditTime: 2023-10-31 10:33:53
  * @Description:
  */
 
@@ -41,7 +41,7 @@ export interface Pausable {
 /**
  * Get the value of value/ref/getter.
  */
-export function toValue<T>(r: MaybeRefOrGetter<T>): T {
+export function toUnRefValue<T>(r: MaybeRefOrGetter<T>): T {
   return typeof r === 'function'
     ? (r as AnyFn)()
     : unref(r)

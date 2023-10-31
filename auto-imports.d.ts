@@ -87,7 +87,8 @@ declare global {
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
-  const toValue: typeof import('./src/composables/index')['toValue']
+  const toUnRefValue: typeof import('./src/composables/index')['toUnRefValue']
+  const toValue: typeof import('vue')['toValue']
   const triggerRef: typeof import('vue')['triggerRef']
   const tryOnScopeDispose: typeof import('./src/composables/index')['tryOnScopeDispose']
   const unref: typeof import('vue')['unref']
@@ -198,7 +199,8 @@ declare module 'vue' {
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
-    readonly toValue: UnwrapRef<typeof import('./src/composables/index')['toValue']>
+    readonly toUnRefValue: UnwrapRef<typeof import('./src/composables/index')['toUnRefValue']>
+    readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly tryOnScopeDispose: UnwrapRef<typeof import('./src/composables/index')['tryOnScopeDispose']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
@@ -303,7 +305,8 @@ declare module '@vue/runtime-core' {
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
-    readonly toValue: UnwrapRef<typeof import('./src/composables/index')['toValue']>
+    readonly toUnRefValue: UnwrapRef<typeof import('./src/composables/index')['toUnRefValue']>
+    readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly tryOnScopeDispose: UnwrapRef<typeof import('./src/composables/index')['tryOnScopeDispose']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>

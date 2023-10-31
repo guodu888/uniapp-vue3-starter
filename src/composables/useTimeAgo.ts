@@ -9,7 +9,7 @@
 import type { DateLike } from './useDateFormat'
 import { normalizeDate } from './useDateFormat'
 import type { MaybeRefOrGetter } from '.'
-import { toValue } from '.'
+import { toUnRefValue } from '.'
 
 // Copy from https://vueuse.org/core/useTimeAgo/
 
@@ -138,8 +138,8 @@ export function useTimeAgo<UnitNames extends string = UseTimeAgoUnitNamesDefault
   const {
     updateInterval = 30_000,
   } = options
-  const now = options.now ? computed(() => normalizeDate(toValue(options.now))) : useNow({ interval: updateInterval })
-  const timeAgo = computed(() => formatTimeAgo(new Date(toValue(time)), options, toValue(now.value)))
+  const now = options.now ? computed(() => normalizeDate(toUnRefValue(options.now))) : useNow({ interval: updateInterval })
+  const timeAgo = computed(() => formatTimeAgo(new Date(toUnRefValue(time)), options, toUnRefValue(now.value)))
 
   return timeAgo
 }
