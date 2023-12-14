@@ -1,8 +1,8 @@
 <!--
  * @Author: shaohang-shy
  * @Date: 2023-05-05 13:59:10
- * @LastEditors: shaohang-shy
- * @LastEditTime: 2023-08-24 17:02:24
+ * @LastEditors: shy1118
+ * @LastEditTime: 2023-11-23 15:50:45
  * @Description: components
 -->
 <script setup lang="ts">
@@ -39,53 +39,8 @@ function handleTo(name: string) {
     <button class="btn mt-3" @tap="handleTo('calendar')">
       日历
     </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
-    </button>
-    <button class="btn mt-3">
-      按钮
+    <button class="btn mt-3" @tap="handleTo('color-picker')">
+      Color Picker
     </button>
   </div>
 </template>

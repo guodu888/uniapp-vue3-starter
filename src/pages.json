@@ -78,6 +78,12 @@
       "style": {
         "navigationBarTitleText": "日历"
       }
+    },
+    {
+      "path": "pages/components/pages/color-picker",
+      "style": {
+        "navigationBarTitleText": "颜色选择器"
+      }
     }
   ],
   "globalStyle": {
