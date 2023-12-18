@@ -21,6 +21,9 @@ onPullDownRefresh(() => {
     uni.stopPullDownRefresh()
   })
 })
+onReachBottom(() => {
+  next()
+})
 </script>
 
 <template>
@@ -37,17 +40,9 @@ onPullDownRefresh(() => {
       </button>
     </view>
     <!-- list -->
-    <view v-for="item in list" :key="item.id">
+    <view v-for="item in list" :key="item.id" class="my-2 bg-gray rounded flex-center h-90 w-full">
       {{ item.nickname }}
     </view>
-    <view v-if="isLoading">
-      正在加载
-    </view>
-    <view v-else-if="isLoadAll">
-      加载完毕
-    </view>
-    <view v-else @tap="() => next()">
-      加载更多
-    </view>
+    <shy-load-more :is-loading="isLoading" :is-load-all="isLoadAll" @more="() => next()" />
   </view>
 </template>

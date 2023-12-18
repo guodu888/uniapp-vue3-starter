@@ -19,5 +19,6 @@ declare module 'vue' {
     GuoduNavBar: typeof import('./src/widgets/guodu-nav-bar/guodu-nav-bar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ShyLoadMore: typeof import('./src/components/shy-load-more/shy-load-more.vue')['default']
   }
 }

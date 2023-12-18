@@ -243,16 +243,19 @@ app.get('/api/user/list', (req, res) => {
   const page_no = req.query.page_no ?? 1
   const page_size = req.query.page_size ?? 10
   const sex = req.query.sex ?? 0
-  res.send({
-    code: 0,
-    msg: 'ok',
-    data: {
-      page_size,
-      page_no,
-      count: userList.filter(x => Number.parseInt(sex) === 0 || Number.parseInt(x.sex) === Number.parseInt(sex)).length,
-      list: userList.filter(x => Number.parseInt(sex) === 0 || Number.parseInt(x.sex) === Number.parseInt(sex)).slice((page_no - 1) * page_size, page_no * page_size),
-    },
-  })
+  // 等待 1s 返回数据
+  setTimeout(() => {
+    res.send({
+      code: 0,
+      msg: 'ok',
+      data: {
+        page_size,
+        page_no,
+        count: userList.filter(x => Number.parseInt(sex) === 0 || Number.parseInt(x.sex) === Number.parseInt(sex)).length,
+        list: userList.filter(x => Number.parseInt(sex) === 0 || Number.parseInt(x.sex) === Number.parseInt(sex)).slice((page_no - 1) * page_size, page_no * page_size),
+      },
+    })
+  }, 1000)
 })
 
 app.listen(8081, () => {
