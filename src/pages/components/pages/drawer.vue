@@ -40,18 +40,18 @@ function onDrawerClosed() {
       打开
     </button>
     <div class="mt-3 flex flex-col gap-3">
-      <Radio :checked="mode === 'top'" @tap="mode = 'top'">
+      <radio :checked="mode === 'top'" @tap="mode = 'top'">
         从上到下
-      </Radio>
-      <Radio :checked="mode === 'bottom'" @tap="mode = 'bottom'">
+      </radio>
+      <radio :checked="mode === 'bottom'" @tap="mode = 'bottom'">
         从下到上
-      </Radio>
-      <Radio :checked="mode === 'left'" @tap="mode = 'left'">
+      </radio>
+      <radio :checked="mode === 'left'" @tap="mode = 'left'">
         从左到右
-      </Radio>
-      <Radio :checked="mode === 'right'" @tap="mode = 'right'">
+      </radio>
+      <radio :checked="mode === 'right'" @tap="mode = 'right'">
         从右到左
-      </Radio>
+      </radio>
     </div>
     <div class="mt-3 flex gap-3 justify-start items-center">
       是否开启圆角 <switch :checked="showRadius" @change="(e: any) => showRadius = e.detail.value" />
