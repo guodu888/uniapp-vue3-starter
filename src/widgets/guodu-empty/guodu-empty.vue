@@ -18,7 +18,7 @@ withDefaults(
     message?: string
   }>(),
   {
-    url: 'https://yiguodu-habit.oss-cn-qingdao.aliyuncs.com/uni-app/default/empty-content.png',
+    url: '/static/images/empty.png',
     message: '这里空空的 什么都没有',
   },
 )
