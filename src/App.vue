@@ -30,6 +30,19 @@ uni.getSystemInfo({
 onThemeChange(({ theme }) => {
   t.setTheme(theme)
 })
+// #ifdef H5
+// 监听浏览器主题变化
+function handler({ matches }: { matches: boolean }) {
+  t.setTheme(matches ? 'dark' : 'light')
+}
+const mediaQuery = window!.matchMedia('(prefers-color-scheme: dark)')
+handler(mediaQuery)
+if ('addEventListener' in mediaQuery)
+  mediaQuery.addEventListener('change', handler)
+else
+  // @ts-expect-error deprecated API
+  mediaQuery.addListener(handler)
+// #endif
 </script>
 
 <style lang="scss">
