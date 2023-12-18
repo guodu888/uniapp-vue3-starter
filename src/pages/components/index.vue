@@ -18,7 +18,7 @@ function handleTo(name: string) {
     <div class="mt-60rpx text-xl font-bold">
       组件
     </div>
-    <button class="btn mt-3" @tap="handleTo('drawer')">
+    <button class="btn btn-primary mt-3" @tap="handleTo('drawer')">
       弹窗/抽屉
     </button>
     <button class="btn mt-3" @tap="handleTo('modal')">

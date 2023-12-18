@@ -1,4 +1,8 @@
-const BASE_URL = '/api'
+let BASE_URL = '/api'
+
+// #ifdef MP-WEIXIN
+BASE_URL = 'http://192.168.7.24:8081/api'
+// #endif
 
 const path = {
   login: '/login',

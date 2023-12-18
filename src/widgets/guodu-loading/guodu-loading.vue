@@ -3,7 +3,7 @@ const props = withDefaults(defineProps<{
   color?: string
   type?: 'line-circle' | 'dot-line' | 'dot-circle'
 }>(), {
-  color: 'var(--guodu-loading)',
+  color: 'var(--text-color-3)',
   type: 'line-circle',
 })
 const loadingColor = computed(() => props.color)
