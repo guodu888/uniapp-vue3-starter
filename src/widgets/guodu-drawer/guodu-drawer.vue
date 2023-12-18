@@ -97,9 +97,9 @@ const radiusSize = computed(() => {
       }"
     >
       <slot name="header" />
-      <ScrollView class="h-full" scroll-y>
+      <scroll-view class="h-full" scroll-y>
         <slot />
-      </ScrollView>
+      </scroll-view>
     </view>
   </view>
 </template>
