@@ -5,6 +5,7 @@ export interface FetchOptions {
   data: Record<string, string | number>
   timeout: number
   showErrToast?: boolean
+  retryTimeout?: number
 }
 
 export interface FetchResult<T> {
