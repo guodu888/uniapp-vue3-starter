@@ -1,6 +1,6 @@
 <h1 align="center">uniapp vue starter</h1>
 
-## 🚀 Features  
+## 🚀 Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/) - born with fastness
 
@@ -23,7 +23,7 @@
 ```bash
 npx degit guodu888/uniapp-vue3-starter
 cd uniapp-vue3-starter
-pnpm install 
+pnpm install
 ```
 
 > 推荐使用 [`antfu/ni`](https://github.com/antfu/ni).

@@ -197,7 +197,7 @@ function getCanvasAttr(): Promise<{
 
 function touchStart(e: TouchEvent) {
   if (chartInstance && e.touches.length > 0) {
-    const touch = e.touches[0] as unknown as { x: number; y: number }
+    const touch = e.touches[0] as unknown as { x: number, y: number }
     const handler = chartInstance.getZr().handler
     handler.dispatch('mousedown', {
       zrX: touch.x,
@@ -212,7 +212,7 @@ function touchStart(e: TouchEvent) {
 }
 function touchMove(e: TouchEvent) {
   if (chartInstance && e.touches.length > 0) {
-    const touch = e.touches[0] as unknown as { x: number; y: number }
+    const touch = e.touches[0] as unknown as { x: number, y: number }
     const handler = chartInstance.getZr().handler
     handler.dispatch('mousemove', {
       zrX: touch.x,
@@ -223,7 +223,7 @@ function touchMove(e: TouchEvent) {
 }
 function touchEnd(e: TouchEvent) {
   if (chartInstance) {
-    const touch = (e.changedTouches ? e.changedTouches[0] : {}) as unknown as { x: number; y: number }
+    const touch = (e.changedTouches ? e.changedTouches[0] : {}) as unknown as { x: number, y: number }
     const handler = chartInstance.getZr().handler
     handler.dispatch('mouseup', {
       zrX: touch.x,
@@ -238,7 +238,7 @@ function touchEnd(e: TouchEvent) {
 }
 function wrapTouch(event: TouchEvent): any {
   for (let i = 0; i < event.touches.length; ++i) {
-    const touch = event.touches[i] as unknown as { x: number; y: number; offsetX: number; offsetY: number }
+    const touch = event.touches[i] as unknown as { x: number, y: number, offsetX: number, offsetY: number }
     touch.offsetX = touch.x
     touch.offsetY = touch.y
   }
