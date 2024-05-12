@@ -27,7 +27,7 @@ const showSelectTimeRange = ref(false)
       选择时间
     </button>
     <GuoduDrawer :visible="showSelectTime" :radius="14" mode="bottom" size="auto" @close="showSelectTime = false">
-      <GuoduCalendar :value="selectTime" mode="single" @cancel="showSelectTime = false" @submit="e => (selectTime = e, showSelectTime = false)" />
+      <GuoduCalendar :value="selectTime" mode="single" @cancel="showSelectTime = false" @submit="(e: any) => (selectTime = e, showSelectTime = false)" />
     </GuoduDrawer>
     <view class="mt-3">
       {{ selectTimeRangeFormat.join('~') }}
@@ -36,7 +36,7 @@ const showSelectTimeRange = ref(false)
       选择时间范围
     </button>
     <GuoduDrawer :visible="showSelectTimeRange" :radius="14" mode="bottom" size="auto" @close="showSelectTimeRange = false">
-      <GuoduCalendar :value="selectTimeRange" mode="range" @cancel="showSelectTimeRange = false" @submit="e => (selectTimeRange = e, showSelectTimeRange = false)" />
+      <GuoduCalendar :value="selectTimeRange" mode="range" @cancel="showSelectTimeRange = false" @submit="(e: any) => (selectTimeRange = e, showSelectTimeRange = false)" />
     </GuoduDrawer>
   </div>
 </template>
