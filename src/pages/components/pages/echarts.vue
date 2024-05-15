@@ -287,7 +287,6 @@ const chartData4 = ref<ECOption>({
     </p>
     <div class="h-40vh w-full">
       <GuoduEcharts
-        ref="echarts"
         :options="chartData1" canvas-id="chartData1"
       />
     </div>
@@ -296,7 +295,6 @@ const chartData4 = ref<ECOption>({
     </p>
     <div class="h-40vh w-full">
       <GuoduEcharts
-        ref="echarts"
         :options="chartData2" canvas-id="chartData2"
       />
     </div>
@@ -305,7 +303,6 @@ const chartData4 = ref<ECOption>({
     </p>
     <div class="h-40vh w-full">
       <GuoduEcharts
-        ref="echarts"
         :options="chartData3" canvas-id="chartData3"
       />
     </div>
@@ -314,7 +311,6 @@ const chartData4 = ref<ECOption>({
     </p>
     <div class="h-40vh w-full">
       <GuoduEcharts
-        ref="echarts"
         :options="chartData4" canvas-id="chartData4"
       />
     </div>
