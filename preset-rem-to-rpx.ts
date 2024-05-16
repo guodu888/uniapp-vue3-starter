@@ -1,6 +1,6 @@
 import type { Preset } from '@unocss/core'
 
-const remRE = /(-?[\.\d]+)rem/g
+const remRE = /(-?[.\d]+)rem/g
 export default function remToRpxPreset(): Preset {
   return {
     name: '@unocss/preset-rem-to-rpx',

@@ -43,7 +43,7 @@ function mormalizeColor(color: string): Color {
   let b = 0
   let a = 1
   // 检查是否为十六进制颜色
-  let match = color.match(/^#([a-fA-F0-9]{3,4})$|^#([a-fA-F0-9]{6})([a-fA-F0-9]{2})?$/)
+  let match = color.match(/^#([a-f0-9]{3,4})$|^#([a-f0-9]{6})([a-f0-9]{2})?$/i)
   if (match) {
     if (match[1]) { // 短格式
       r = Number.parseInt(match[1].charAt(0) + match[1].charAt(0), 16)
@@ -232,7 +232,7 @@ function handleTouchMove(e: TouchEvent) {
     </div>
     <!-- 选择色相 -->
     <div
-      class="color-picker-hsl hue-box relative h-50rpx w-full" @touchmove="handleHueTouchMove"
+      class="hue-box color-picker-hsl relative h-50rpx w-full" @touchmove="handleHueTouchMove"
     >
       <!-- 显示在哪里 -->
       <div class="bg-white b b-1 b-block b-solid absolute h-full w-10px select-none top-0 translate-x--5px" :style="{ left: `${hsv.h / 360 * 100}%` }" />

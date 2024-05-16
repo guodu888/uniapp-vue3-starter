@@ -1,7 +1,7 @@
 // express_demo.js 文件
 // 导入 app.js
-const bodyParser = require('body-parser')
-const express = require('express')
+import bodyParser from 'body-parser'
+import express from 'express'
 
 const app = express()
 app.use(bodyParser())
@@ -240,9 +240,9 @@ const userList = [
 ]
 
 app.get('/api/user/list', (req, res) => {
-  const page_no = req.query.page_no ?? 1
-  const page_size = req.query.page_size ?? 10
-  const sex = req.query.sex ?? 0
+  const page_no = (req.query.page_no as unknown as number) ?? 1
+  const page_size = (req.query.page_size as unknown as number) ?? 10
+  const sex: string = (req.query.sex as unknown as string) ?? 0
   // 等待 1s 返回数据
   setTimeout(() => {
     res.send({

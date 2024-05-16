@@ -164,7 +164,7 @@ function handleCancel() {
       <button class="bg-$base-color b-1 b-#CAD1D9 rounded-lg b-solid text-36rpx leading-80rpx flex-1 h-80rpx" @tap="handleCancel">
         取消
       </button>
-      <button class="bg-$primary-color rounded-lg text-32rpx leading-80rpx text-white flex-1 h-80rpx" @tap="handleSubmit">
+      <button class="bg-$primary-color rounded-lg text-32rpx text-white leading-80rpx flex-1 h-80rpx" @tap="handleSubmit">
         确定
       </button>
     </div>
