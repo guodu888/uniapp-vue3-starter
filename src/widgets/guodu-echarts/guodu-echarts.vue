@@ -38,7 +38,8 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  chartInstance && chartInstance.dispose()
+  if (chartInstance)
+    chartInstance.dispose()
 })
 
 // #ifdef H5
@@ -61,7 +62,8 @@ function initChart(options: Record<string, any>) {
 // @ts-expect-error
 function canvasToTempFilePath(opt: { success: (arg0: { tempFilePath: string }) => any }) {
   const base64 = chartInstance.getDataURL()
-  opt.success && opt.success({ tempFilePath: base64 })
+  if (opt.success)
+    opt.success({ tempFilePath: base64 })
 }
 exposeObj.canvasToTempFilePath = canvasToTempFilePath
 // #endif
