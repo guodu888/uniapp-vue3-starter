@@ -6,8 +6,8 @@
  * @Description: guodu-calendar
 -->
 <script setup lang="ts">
-import type { DateItem } from './util'
 import { Calendar } from './util'
+import type { DateItem } from './util'
 
 const props = withDefaults(defineProps<{
   defaultTime?: number // 默认日期
@@ -119,30 +119,30 @@ function handleCancel() {
 </script>
 
 <template>
-  <div class="py-3 bg-$base-color rounded-t-xl text-$text-color-1 w-full">
+  <div class="w-full rounded-t-xl bg-$base-color py-3 text-$text-color-1">
     <!-- 头部 -->
-    <div class="leading-80rpx flex-center">
+    <div class="flex-center leading-80rpx">
       <div class="i-carbon:chevron-left px-5" @tap="handleChangeLastMonth" />
       <picker mode="date" fields="month" :value="date" @change="(e: any) => changeDate(e.detail.value)">
         {{ date }}
       </picker>
       <div class="i-carbon:chevron-right px-5" @tap="handleChangeNextMonth" />
     </div>
-    <div class="flex w-full">
+    <div class="w-full flex">
       <div v-if="props.mode === 'week'" class="h-full w-80rpx">
         <!-- 这里展示周的序号 -->
-        <div class="text-$text-color-3 flex-center flex-1 flex-col h-80rpx">
+        <div class="h-80rpx flex-center flex-1 flex-col text-$text-color-3">
           周
         </div>
         <div class="grid grid-cols-1 gap-y-5rpx">
-          <div v-for="item in calendar.weekNos" :key="item" class="p-5rpx text-$text-color-3 flex-center h-80rpx">
+          <div v-for="item in calendar.weekNos" :key="item" class="h-80rpx flex-center p-5rpx text-$text-color-3">
             {{ item }}
           </div>
         </div>
       </div>
       <div class="flex-1">
         <div class="grid grid-cols-7">
-          <div v-for="week, idx in weekNames" :key="idx" class="text-$text-color-3 flex-center flex-1 flex-col h-80rpx">
+          <div v-for="week, idx in weekNames" :key="idx" class="h-80rpx flex-center flex-1 flex-col text-$text-color-3">
             {{ week }}
           </div>
         </div>
@@ -150,8 +150,8 @@ function handleCancel() {
           <div v-for="day in calendar.weeks.splice(props.startWeek)" :key="`${day.month}-${day.day}`" class="h-80rpx" @tap="handleSelectDay(day)">
             <slot v-if="hasSlot('day')" name="day" :item="day" />
             <template v-else>
-              <div class="p-5rpx flex-center h-full w-full" :class="{ 'text-#aaa': !day.currentMonth, 'bg-$primary-color': day.isSelected && day.currentMonth, 'rounded-r-full': day.isSelectedEnd && day.currentMonth, 'rounded-l-full': day.isSelectedStart && day.currentMonth }">
-                <div class="flex-center h-full w-full" :class="{ 'bg-$info-color rounded-full': day.currentMonth && (day.isSelectedStart || day.isSelectedEnd) }">
+              <div class="h-full w-full flex-center p-5rpx" :class="{ 'text-#aaa': !day.currentMonth, 'bg-$primary-color': day.isSelected && day.currentMonth, 'rounded-r-full': day.isSelectedEnd && day.currentMonth, 'rounded-l-full': day.isSelectedStart && day.currentMonth }">
+                <div class="h-full w-full flex-center" :class="{ 'bg-$info-color rounded-full': day.currentMonth && (day.isSelectedStart || day.isSelectedEnd) }">
                   {{ day.day }}
                 </div>
               </div>
@@ -160,11 +160,11 @@ function handleCancel() {
         </div>
       </div>
     </div>
-    <div class="p-3 p-b-0 flex gap-3 w-full">
-      <button class="bg-$base-color b-1 b-#CAD1D9 rounded-lg b-solid text-36rpx leading-80rpx flex-1 h-80rpx" @tap="handleCancel">
+    <div class="w-full flex gap-3 p-3 p-b-0">
+      <button class="h-80rpx flex-1 b-1 b-#CAD1D9 rounded-lg b-solid bg-$base-color text-36rpx leading-80rpx" @tap="handleCancel">
         取消
       </button>
-      <button class="bg-$primary-color rounded-lg text-32rpx text-white leading-80rpx flex-1 h-80rpx" @tap="handleSubmit">
+      <button class="h-80rpx flex-1 rounded-lg bg-$primary-color text-32rpx text-white leading-80rpx" @tap="handleSubmit">
         确定
       </button>
     </div>

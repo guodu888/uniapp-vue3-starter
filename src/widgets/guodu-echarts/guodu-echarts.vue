@@ -7,9 +7,9 @@
  * @example <guodu-echarts ref="echarts" :options="options" canvasId="echarts"></guodu-echarts>
  */
 import type { ECharts } from 'echarts'
-import type { ECOption } from './echarts'
 import echarts from './echarts'
 import WxCanvas from './wx-canvas.js'
+import type { ECOption } from './echarts'
 
 const props = defineProps<{
   canvasId: string

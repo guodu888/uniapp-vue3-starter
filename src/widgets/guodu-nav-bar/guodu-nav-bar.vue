@@ -42,12 +42,12 @@ function handleClickBack() {
 </script>
 
 <template>
-  <div class="nav-bar nav-height flex w-full justify-around items-center">
-    <div class="text-14px flex-left flex-left h-full w-250" @tap="handleClickBack">
+  <div class="nav-bar nav-height w-full flex items-center justify-around">
+    <div class="h-full w-250 flex-left flex-left text-14px" @tap="handleClickBack">
       <div v-if="props.showBack" class="i-carbon-chevron-left h-50 w-50" />
       <slot name="icon" />
     </div>
-    <div class="text-16px font-bold truncate text-center flex-1">
+    <div class="flex-1 truncate text-center text-16px font-bold">
       {{ title }}
     </div>
     <div class="w-250" />

@@ -10,7 +10,7 @@ const loadingColor = computed(() => props.color)
 </script>
 
 <template>
-  <view class="loading flex-center w-full">
+  <view class="loading w-full flex-center">
     <view v-if="props.type === 'line-circle'" class="loading-line-circle" />
     <view v-else-if="props.type === 'dot-line'" class="loading-dot-line flex-center">
       <view v-for="i in 3" :key="i" class="item" />

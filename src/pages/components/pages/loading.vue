@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="p-3 w-full">
+  <div class="w-full p-3">
     loading
     <GuoduLoading class="m-3" />
     <GuoduLoading type="dot-line" class="m-3" />

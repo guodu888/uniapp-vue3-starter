@@ -216,18 +216,18 @@ function handleTouchMove(e: TouchEvent) {
 </script>
 
 <template>
-  <div class="p-3 flex-center flex-col gap-3 w-full">
+  <div class="w-full flex-center flex-col gap-3 p-3">
     <!-- 预览及透明度 -->
-    <div class="flex-center gap-3 w-full">
-      <div class="alpha-background-image pt-20% relative w-20%">
-        <div class="absolute h-full w-full bottom-0 left-0 right-0 top-0" :style="{ background: `rgba(${computedColor.r}, ${computedColor.g}, ${computedColor.b}, ${computedColor.a})` }" />
+    <div class="w-full flex-center gap-3">
+      <div class="alpha-background-image relative w-20% pt-20%">
+        <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full" :style="{ background: `rgba(${computedColor.r}, ${computedColor.g}, ${computedColor.b}, ${computedColor.a})` }" />
       </div>
       <div
-        class="alpha-background-image alpha-box flex-1 relative h-50rpx" @touchmove="handleAlphaTouchMove"
+        class="alpha-background-image alpha-box relative h-50rpx flex-1" @touchmove="handleAlphaTouchMove"
       >
         <div class="h-full w-full" :style="{ background: alphaSliderBackground }" />
         <!-- 显示在哪里 -->
-        <div class="bg-white b b-1 b-block b-solid absolute h-full w-10px select-none top-0 translate-x--5px" :style="{ left: `${computedColor.a * 100}%` }" />
+        <div class="absolute top-0 h-full w-10px translate-x--5px select-none b b-1 b-block b-solid bg-white" :style="{ left: `${computedColor.a * 100}%` }" />
       </div>
     </div>
     <!-- 选择色相 -->
@@ -235,15 +235,15 @@ function handleTouchMove(e: TouchEvent) {
       class="hue-box color-picker-hsl relative h-50rpx w-full" @touchmove="handleHueTouchMove"
     >
       <!-- 显示在哪里 -->
-      <div class="bg-white b b-1 b-block b-solid absolute h-full w-10px select-none top-0 translate-x--5px" :style="{ left: `${hsv.h / 360 * 100}%` }" />
+      <div class="absolute top-0 h-full w-10px translate-x--5px select-none b b-1 b-block b-solid bg-white" :style="{ left: `${hsv.h / 360 * 100}%` }" />
     </div>
     <!-- 选择色相对应的颜色 -->
     <div
-      class="color-box pt-100% relative w-full" :style="{ background: hueBoxBackgroundColor }" @touchmove="handleTouchMove"
+      class="color-box relative w-full pt-100%" :style="{ background: hueBoxBackgroundColor }" @touchmove="handleTouchMove"
     >
-      <div class="color-overlay absolute h-full w-full left-0 top-0" />
+      <div class="color-overlay absolute left-0 top-0 h-full w-full" />
       <!-- 显示在哪里 -->
-      <div class="bg-white b b-1 b-block rounded-full b-solid absolute h-10px w-10px select-none left-0 top-0 translate-x--5px translate-y--5px" :style="{ left: `${hsv.s * 100}%`, top: `${(1 - hsv.v) * 100}%` }" />
+      <div class="absolute left-0 top-0 h-10px w-10px translate-x--5px translate-y--5px select-none b b-1 b-block rounded-full b-solid bg-white" :style="{ left: `${hsv.s * 100}%`, top: `${(1 - hsv.v) * 100}%` }" />
     </div>
   </div>
 </template>

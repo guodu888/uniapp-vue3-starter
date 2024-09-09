@@ -17,7 +17,7 @@ const emits = defineEmits(['more'])
 </script>
 
 <template>
-  <div class="p-3 text-26rpx text-$text-color-3 flex-center w-full">
+  <div class="w-full flex-center p-3 text-26rpx text-$text-color-3">
     <guodu-loading v-if="props.isLoading" type="dot-line" />
     <div v-else-if="props.isLoadAll">
       加载完毕

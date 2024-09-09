@@ -1,7 +1,7 @@
-import presetWeapp from 'unocss-preset-weapp'
-import presetIcons from '@unocss/preset-icons'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
+import presetIcons from '@unocss/preset-icons'
+import presetWeapp from 'unocss-preset-weapp'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import remToRpxPreset from './preset-rem-to-rpx'
 
 export default {

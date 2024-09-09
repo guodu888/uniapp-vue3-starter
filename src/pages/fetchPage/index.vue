@@ -28,7 +28,7 @@ onReachBottom(() => {
 
 <template>
   <view class="p-3">
-    <view class="flex w-full">
+    <view class="w-full flex">
       <button @tap="sex = 0">
         全部
       </button>
@@ -40,7 +40,7 @@ onReachBottom(() => {
       </button>
     </view>
     <!-- list -->
-    <view v-for="item in list" :key="item.id" class="my-2 bg-gray rounded flex-center h-90 w-full">
+    <view v-for="item in list" :key="item.id" class="my-2 h-90 w-full flex-center rounded bg-gray">
       {{ item.nickname }}
     </view>
     <shy-load-more :is-loading="isLoading" :is-load-all="isLoadAll" @more="() => next()" />

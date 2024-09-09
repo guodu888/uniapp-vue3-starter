@@ -22,10 +22,10 @@ function handleClose() {
 </script>
 
 <template>
-  <div class="p-15rpx sticky h-100rpx w-full top-0">
-    <div class="pr-80rpx font-bold truncate flex-left h-full w-full">
+  <div class="sticky top-0 h-100rpx w-full p-15rpx">
+    <div class="h-full w-full flex-left truncate pr-80rpx font-bold">
       {{ title }}
     </div>
-    <div v-if="props.showClose" class="i-carbon-close absolute h-50rpx w-50rpx right-25rpx top-25rpx" @tap="handleClose" />
+    <div v-if="props.showClose" class="i-carbon-close absolute right-25rpx top-25rpx h-50rpx w-50rpx" @tap="handleClose" />
   </div>
 </template>

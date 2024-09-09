@@ -18,7 +18,7 @@ const showBack = ref(true)
   </GuoduNavBar>
   <div class="p-3">
     <input v-model="title" class="border" placeholder="请输入导航栏">
-    <div class="mt-3 flex gap-3 justify-start items-center">
+    <div class="mt-3 flex items-center justify-start gap-3">
       显示返回图标 <switch :checked="showBack" @change="(e: any) => showBack = e.detail.value" />
     </div>
   </div>

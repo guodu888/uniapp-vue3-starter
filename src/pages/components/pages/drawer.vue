@@ -53,10 +53,10 @@ function onDrawerClosed() {
         从右到左
       </radio>
     </div>
-    <div class="mt-3 flex gap-3 justify-start items-center">
+    <div class="mt-3 flex items-center justify-start gap-3">
       是否开启圆角 <switch :checked="showRadius" @change="(e: any) => showRadius = e.detail.value" />
     </div>
-    <div class="mt-3 flex gap-3 justify-start items-center">
+    <div class="mt-3 flex items-center justify-start gap-3">
       点击阴影触发关闭 <switch :checked="maskClick" @change="(e: any) => maskClick = e.detail.value" />
     </div>
   </div>
