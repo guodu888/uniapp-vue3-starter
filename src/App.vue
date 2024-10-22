@@ -47,5 +47,5 @@ else
 
 <style lang="scss">
 /*每个页面公共css */
-@import "./styles/main.scss";
+@use "./styles/main.scss" as *;
 </style>

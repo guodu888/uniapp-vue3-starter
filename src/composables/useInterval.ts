@@ -7,8 +7,8 @@
  */
 // Copy from useuse
 
-import { isClient, tryOnScopeDispose } from '.'
 import type { Fn, MaybeRefOrGetter, Pausable } from '.'
+import { isClient, tryOnScopeDispose } from '.'
 
 export interface UseIntervalFnOptions {
   /**

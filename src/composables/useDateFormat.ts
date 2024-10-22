@@ -36,8 +36,8 @@
 // | `ddd`  | Sun-Sat          | The short name of the day of the week |
 // | `dddd` | Sunday-Saturday  | The name of the day of the week       |
 
-import { toUnRefValue } from '.'
 import type { MaybeRefOrGetter } from '.'
+import { toUnRefValue } from '.'
 
 export type DateLike = Date | number | string | undefined
 

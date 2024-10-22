@@ -6,10 +6,10 @@
  * @Description: useTimeAgo
  */
 
-import { toUnRefValue } from '.'
-import { normalizeDate } from './useDateFormat'
 import type { MaybeRefOrGetter } from '.'
 import type { DateLike } from './useDateFormat'
+import { toUnRefValue } from '.'
+import { normalizeDate } from './useDateFormat'
 
 // Copy from https://vueuse.org/core/useTimeAgo/
 

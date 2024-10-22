@@ -6,8 +6,8 @@
  * @Description: guodu-calendar
 -->
 <script setup lang="ts">
-import { Calendar } from './util'
 import type { DateItem } from './util'
+import { Calendar } from './util'
 
 const props = withDefaults(defineProps<{
   defaultTime?: number // 默认日期

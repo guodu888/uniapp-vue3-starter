@@ -7,8 +7,8 @@
  */
 // Copy from https://vueuse.org/useNow
 
-import { useIntervalFn } from './useInterval'
 import type { Pausable } from '.'
+import { useIntervalFn } from './useInterval'
 
 export interface UseNowOptions<Controls extends boolean> {
   /**
