@@ -1,5 +1,5 @@
-import { api } from '~/config/api'
 import type { RoleItem, UserInfo } from '~/types/user'
+import { api } from '~/config/api'
 import { getToken, getUserRoleId, removeToken, removeUserRoleId, setToken, setUserRoleId } from '~/utils/auth'
 import { Fetch } from '~/utils/fetch'
 
