@@ -7,7 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Footer: typeof import('./src/components/Footer.vue')['default']
     GuoduCalendar: typeof import('./src/widgets/guodu-calendar/guodu-calendar.vue')['default']
     GuoduColorPicker: typeof import('./src/widgets/guodu-color-picker/guodu-color-picker.vue')['default']
     GuoduDrawer: typeof import('./src/widgets/guodu-drawer/guodu-drawer.vue')['default']

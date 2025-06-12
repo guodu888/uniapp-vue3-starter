@@ -21,7 +21,6 @@ export default defineConfig({
       dts: true,
       dirs: ['src/components', 'src/widgets'],
     }),
-    // @ts-expect-error missing types
     uni.default(),
     Unocss(),
     AutoImport({
